@@ -13,7 +13,7 @@ import { useLang } from '@/context/LanguageContext'
 const whyItems = [
   {
     icon: Home,
-    vi: { title: 'Không gian như nhà', desc: 'Phòng riêng tư, sạch sẽ — ấm cúng như ngôi nhà của chính bạn.' },
+    vi: { title: 'Không gian ấm cúng cảm giác như ở nhà', desc: 'Phòng riêng tư, sạch sẽ — ấm cúng như ngôi nhà của chính bạn.' },
     en: { title: 'Home-like comfort', desc: 'Private, clean rooms — as warm and cosy as your own home.' },
   },
   {

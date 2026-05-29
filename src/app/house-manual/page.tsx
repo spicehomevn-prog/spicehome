@@ -213,7 +213,7 @@ export default function HouseManualPage() {
       <div className="bg-dark pt-32 pb-16 px-6 text-center">
         <SectionLabel className="text-accent/80">SpiceHome</SectionLabel>
         <h1 className="font-playfair italic text-white text-4xl md:text-5xl">
-          {lang === 'vi' ? 'Hướng Dẫn Nhà' : 'House Manual'}
+          {lang === 'vi' ? 'Hướng Dẫn' : 'House Manual'}
         </h1>
         <p className="text-white/60 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
           {lang === 'vi'
