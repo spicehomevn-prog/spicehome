@@ -58,16 +58,18 @@ export function GalleryModal({ images, initialIndex = 0, roomLabel, onClose }: P
 
       {/* Main image */}
       <div
-        className="relative w-full max-w-5xl px-0 md:px-16 h-[85vh] md:h-[75vh]"
+        className="relative w-full max-w-5xl px-0 md:px-16 h-[85vh] md:h-[75vh] overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
-        <Image
-          src={images[current]}
-          alt={`${roomLabel} — photo ${current + 1}`}
-          fill
-          className="object-contain"
-          priority
-        />
+        <div className="absolute inset-0 scale-150 md:scale-100">
+          <Image
+            src={images[current]}
+            alt={`${roomLabel} — photo ${current + 1}`}
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
       </div>
 
       {/* Prev / Next arrows */}
