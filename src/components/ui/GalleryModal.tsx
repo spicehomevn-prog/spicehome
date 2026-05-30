@@ -58,7 +58,7 @@ export function GalleryModal({ images, initialIndex = 0, roomLabel, onClose }: P
 
       {/* Main image */}
       <div
-        className="relative w-full max-w-5xl px-16 h-[75vh]"
+        className="relative w-full max-w-5xl px-0 md:px-16 h-[85vh] md:h-[75vh]"
         onClick={e => e.stopPropagation()}
       >
         <Image
@@ -94,14 +94,14 @@ export function GalleryModal({ images, initialIndex = 0, roomLabel, onClose }: P
 
       {/* Thumbnail strip */}
       <div
-        className="absolute bottom-0 inset-x-0 flex gap-2 justify-center px-6 py-4 overflow-x-auto"
+        className="absolute bottom-0 inset-x-0 flex gap-2 justify-start md:justify-center px-4 py-3 overflow-x-auto scrollbar-none"
         onClick={e => e.stopPropagation()}
       >
         {images.map((src, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`relative shrink-0 w-14 h-10 overflow-hidden transition-opacity duration-200
+            className={`relative shrink-0 w-16 h-10 md:w-14 md:h-10 overflow-hidden transition-opacity duration-200
               ${i === current ? 'ring-2 ring-accent opacity-100' : 'opacity-40 hover:opacity-70'}`}
           >
             <Image src={src} alt={`Thumb ${i + 1}`} fill className="object-cover" />

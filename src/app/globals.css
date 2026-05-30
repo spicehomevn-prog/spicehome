@@ -69,3 +69,12 @@ body {
   opacity: 0;
   animation: heroFadeIn 1s ease-out 0.8s forwards;
 }
+
+/* Hide scrollbar for thumbnail strip */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
