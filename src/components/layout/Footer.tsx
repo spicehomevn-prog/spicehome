@@ -95,7 +95,7 @@ export function Footer() {
           <p className="text-sm text-white/60 mb-4 leading-relaxed">
             {lang === 'vi'
               ? 'Đặt phòng nhanh chóng tiện lợi và an toàn'
-              : 'Book through Airbnb — safe, easy, and covered by Airbnb\'s Guest Guarantee.'}
+              : 'Book quickly, conveniently and safely.'}
           </p>
           <a
             href="https://beacons.ai/spicehomesaigon"

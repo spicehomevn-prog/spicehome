@@ -96,7 +96,7 @@ export const rooms: Room[] = [
     name: { vi: 'Phòng 103', en: 'Room 103' },
     tagline: { vi: 'Không gian yên tĩnh, ấm cúng cho kỳ nghỉ trọn vẹn', en: 'Quiet, cozy space for a complete rest' },
     description: {
-      vi: 'Phòng tầng 1 yên tĩnh với không gian ấm cúng. Thiết kế đơn giản tinh tế với gỗ tự nhiên và ánh sáng nhẹ nhàng. Phù hợp với du khách ưa sự bình yên.',
+      vi: 'Phòng tầng 1 yên tĩnh với không gian ấm cúng. Thiết kế đơn giản tinh tế với gỗ tự nhiên và ánh sáng nhẹ nhàng. Phù hợp với du khách thích sự bình yên.',
       en: 'A quiet ground-floor room with a cozy atmosphere. Simple, refined design using natural wood tones and soft lighting — perfect for travellers who value tranquillity.',
     },
     floor: 1,
@@ -217,9 +217,6 @@ export const rooms: Room[] = [
       '/images/rooms/room-203/img2.jpg',
       '/images/rooms/room-203/img3.jpg',
       '/images/rooms/room-203/img4.jpg',
-      '/images/rooms/room-203/img5.jpg',
-      '/images/rooms/room-203/img6.jpg',
-      '/images/rooms/room-203/img7.jpg',
     ],
     amenities: [
       { vi: 'Điều hòa nhiệt độ', en: 'Air conditioning' },

@@ -4,6 +4,7 @@ import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { LanguageProvider } from '@/context/LanguageContext'
+import { GalleryProvider } from '@/context/GalleryContext'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -38,9 +39,11 @@ export default function RootLayout({
     <html lang="vi" className={`${playfair.variable} ${inter.variable}`}>
       <body className="font-inter antialiased">
         <LanguageProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <GalleryProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </GalleryProvider>
         </LanguageProvider>
       </body>
     </html>

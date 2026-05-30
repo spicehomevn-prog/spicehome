@@ -1,12 +1,11 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Users, BedDouble, Images } from 'lucide-react'
 import type { Room } from '@/lib/data/rooms'
 import { useLang } from '@/context/LanguageContext'
-import { GalleryModal } from '@/components/ui/GalleryModal'
+import { useGallery } from '@/context/GalleryContext'
 
 interface Props {
   room: Room
@@ -15,16 +14,15 @@ interface Props {
 
 export function RoomCard({ room, layout = 'card' }: Props) {
   const { lang } = useLang()
-  const [galleryOpen, setGalleryOpen] = useState(false)
+  const { openGallery } = useGallery()
 
   if (layout === 'list') {
     const listRoomLabel = lang === 'vi' ? `Phòng ${room.number}` : `Room ${room.number}`
     return (
-      <>
       <div className="flex flex-col md:flex-row gap-0 border border-border hover:shadow-md transition-shadow duration-300 bg-surface">
         {/* Clickable image */}
         <button
-          onClick={() => setGalleryOpen(true)}
+          onClick={() => openGallery({ images: room.images, roomLabel: listRoomLabel })}
           className="relative w-full md:w-2/5 h-64 md:h-80 shrink-0 overflow-hidden cursor-zoom-in"
           aria-label={`${lang === 'vi' ? 'Xem ảnh' : 'View photos'} ${listRoomLabel}`}
         >
@@ -100,14 +98,6 @@ export function RoomCard({ room, layout = 'card' }: Props) {
         </div>
       </div>
 
-      {galleryOpen && (
-        <GalleryModal
-          images={room.images}
-          roomLabel={listRoomLabel}
-          onClose={() => setGalleryOpen(false)}
-        />
-      )}
-      </>
     )
   }
 
@@ -115,55 +105,44 @@ export function RoomCard({ room, layout = 'card' }: Props) {
   const roomLabel = lang === 'vi' ? `Phòng ${room.number}` : `Room ${room.number}`
 
   return (
-    <>
-      <div className="bg-surface border border-border hover:shadow-md transition-shadow duration-300 group">
-        {/* Clickable image */}
-        <button
-          onClick={() => setGalleryOpen(true)}
-          className="relative h-56 w-full overflow-hidden block cursor-zoom-in"
-          aria-label={`${lang === 'vi' ? 'Xem ảnh' : 'View photos'} ${roomLabel}`}
-        >
-          <Image
-            src={room.images[0]}
-            alt={room.name[lang]}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          {/* Photo count badge */}
-          {room.images.length > 1 && (
-            <span className="absolute bottom-3 right-3 bg-black/60 text-white text-xs
-                             flex items-center gap-1.5 px-2.5 py-1">
-              <Images size={12} />
-              {room.images.length}
-            </span>
-          )}
-        </button>
+    <div className="bg-surface border border-border hover:shadow-md transition-shadow duration-300 group">
+      {/* Clickable image */}
+      <button
+        onClick={() => openGallery({ images: room.images, roomLabel })}
+        className="relative h-56 w-full overflow-hidden block cursor-zoom-in"
+        aria-label={`${lang === 'vi' ? 'Xem ảnh' : 'View photos'} ${roomLabel}`}
+      >
+        <Image
+          src={room.images[0]}
+          alt={room.name[lang]}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        {room.images.length > 1 && (
+          <span className="absolute bottom-3 right-3 bg-black/60 text-white text-xs
+                           flex items-center gap-1.5 px-2.5 py-1">
+            <Images size={12} />
+            {room.images.length}
+          </span>
+        )}
+      </button>
 
-        {/* Content */}
-        <div className="px-6 py-4">
-          <p className="text-sm font-medium uppercase tracking-widest text-accent mb-3">
-            {roomLabel}
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {room.highlights.map((h, i) => (
-              <span
-                key={i}
-                className="text-xs px-2.5 py-1 bg-background border border-border text-muted-text"
-              >
-                {h[lang]}
-              </span>
-            ))}
-          </div>
+      {/* Content */}
+      <div className="px-6 py-4">
+        <p className="text-sm font-medium uppercase tracking-widest text-accent mb-3">
+          {roomLabel}
+        </p>
+        <div className="flex flex-wrap gap-1.5">
+          {room.highlights.map((h, i) => (
+            <span
+              key={i}
+              className="text-xs px-2.5 py-1 bg-background border border-border text-muted-text"
+            >
+              {h[lang]}
+            </span>
+          ))}
         </div>
       </div>
-
-      {galleryOpen && (
-        <GalleryModal
-          images={room.images}
-          roomLabel={roomLabel}
-          onClose={() => setGalleryOpen(false)}
-        />
-      )}
-    </>
+    </div>
   )
 }

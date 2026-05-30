@@ -26,9 +26,8 @@ const sections: ManualSection[] = [
     en: {
       title: 'Check-in & Check-out',
       content: [
-        'Check-in: from 14:00 | Check-out: before 12:00',
-        'Early check-in or late check-out may be possible depending on the schedule — please contact us in advance.',
-        'When you arrive, message Hải or Thanh — we will greet you and guide you to your room.',
+        'Early check-in or late check-out can be arranged depending on room availability — please contact us in advance.',
+        'Convenient 24/7 self check-in / check-out — detailed instructions will be sent before your arrival date.',
         'The door code will be sent by message before your arrival date.',
       ],
     },
@@ -47,9 +46,9 @@ const sections: ManualSection[] = [
     en: {
       title: 'WiFi & Devices',
       content: [
-        'WiFi: SpiceHome_Guest | Password: provided at check-in',
+        'WiFi | Password: provided with your check-in details.',
         'Each room has its own air conditioning — adjust to your preferred temperature.',
-        'Vietnamese power sockets: 220V / 50Hz. Type A, C and F plugs all work.',
+        'Vietnamese power sockets: 220V / 50Hz.',
         'If you experience any electrical issues, contact Hải or Thanh immediately.',
       ],
     },
@@ -66,13 +65,12 @@ const sections: ManualSection[] = [
       ],
     },
     en: {
-      title: 'Kitchen & Food',
+      title: 'Kitchen & Food (Branch 2 only)',
       content: [
         'The shared kitchen is available for light cooking — boiling water, reheating food.',
         'Please wash and put away dishes after use.',
         'Please avoid cooking strongly smelling food (fish sauce, fermented items) in your private room.',
         'Order food delivery through Grab Food or ShopeeFood — extremely convenient!',
-        'Bottled drinking water is provided in the room at check-in.',
       ],
     },
   },
@@ -120,6 +118,7 @@ const sections: ManualSection[] = [
         'Outside guests may not stay overnight.',
         'Please turn off the A/C and lights when leaving the room.',
         'No strongly smelling food (e.g. durian) in the rooms.',
+        'Please provide a photo of your National ID card (for Vietnamese guests) / passport and Vietnam entry stamp (for foreign nationals) — required for guest registration in accordance with current regulations.',
       ],
     },
   },
@@ -136,9 +135,8 @@ const sections: ManualSection[] = [
     en: {
       title: 'Shared Amenities',
       content: [
-        'Washing machine: shared, book a time slot — contact the host to arrange.',
-        'Towels and basic bathroom supplies are provided and regularly refreshed.',
-        'Room cleaning: on request or on a scheduled basis.',
+        'Washing machine: shared — please do not use during quiet hours 22:00–6:00.',
+        'Room cleaning: for stays of 2 weeks or more, free weekly cleaning is included.',
         'Luggage storage: available before check-in or after check-out if needed.',
       ],
     },

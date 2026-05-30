@@ -49,13 +49,13 @@ export default function HomePage() {
           </SectionLabel>
           <h2 className="font-playfair text-3xl md:text-4xl text-primary-text mb-6">
             {lang === 'vi'
-              ? 'Nhà của bạn — giữa lòng thành phố năng động nhất Việt Nam'
-              : 'Your home — in the heart of Vietnam\'s most vibrant city'}
+              ? 'Không chỉ là nơi ở - còn là trải nghiệm cuộc sống địa phương giữa lòng Sài Gòn'
+              : 'Not just a place to stay — a local living experience in the heart of Saigon'}
           </h2>
           <p className="text-muted-text leading-relaxed text-base md:text-lg">
             {lang === 'vi'
-              ? 'SpiceHome không đơn thuần là nơi lưu trú. Chúng tôi muốn bạn cảm nhận Sài Gòn như một người dân địa phương — từ bát phở buổi sáng đến con hẻm yên tĩnh buổi chiều. Hải và Thanh luôn ở đây, sẵn sàng giúp bạn khám phá thành phố này theo cách tốt nhất.'
-              : 'SpiceHome is more than a place to sleep. We want you to experience Saigon like a local — from a morning bowl of phở to a quiet alley in the afternoon. Hải and Thanh are always here, ready to help you discover this city the right way.'}
+              ? 'SpiceHome không đơn thuần là nơi lưu trú. Chúng tôi muốn bạn cảm nhận Sài Gòn như một người dân địa phương — từ đường phố nhộn nhịp với chợ địa phương ban ngày đến con phố yên tĩnh vào ban đêm. Chúng tôi luôn sẵn sàng hỗ trợ giúp bạn khám phá thành phố này theo cách tốt nhất.'
+              : 'SpiceHome is more than a place to sleep. We want you to experience Saigon like a local — from the bustling streets and local markets by day to the quiet neighbourhood at night. We are always ready to help you discover this city the right way.'}
           </p>
         </AnimateOnScroll>
       </section>
