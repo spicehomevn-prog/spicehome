@@ -162,8 +162,8 @@ export default function AboutPage() {
             </SectionLabel>
             <h2 className="font-playfair text-3xl md:text-4xl text-primary-text mb-10">
               {lang === 'vi'
-                ? '"Chúng tôi không chỉ cho thuê phòng — chúng tôi chia sẻ nhà"'
-                : '"We don\'t just rent rooms — we share our home"'}
+                ? '"Nơi lưu trú ấm cúng, giữa thành phố sôi động"'
+                : '"A cozy home in a vibrant city"'}
             </h2>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left">
