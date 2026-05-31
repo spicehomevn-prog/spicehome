@@ -232,7 +232,7 @@ export default function AboutPage() {
               </div>
             </a>
             <a
-              href="https://www.airbnb.com.vn/users/show/spicehomevn"
+              href="https://www.airbnb.com/users/show/479055797"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 border border-border bg-surface p-4

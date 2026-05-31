@@ -168,7 +168,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://www.airbnb.com.vn/users/show/spicehomevn"
+              href="https://www.airbnb.com/users/show/479055797"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-white text-accent text-sm font-medium uppercase tracking-widest

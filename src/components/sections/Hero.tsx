@@ -51,13 +51,13 @@ export function Hero() {
             {lang === 'vi' ? 'Xem Phòng' : 'Explore Rooms'}
           </Link>
           <a
-            href="https://www.airbnb.com.vn/users/show/spicehomevn"
+            href="https://www.airbnb.com/users/show/479055797"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-white/70 text-white text-sm font-medium uppercase tracking-widest px-8 py-3
                        hover:bg-white hover:text-dark transition-colors duration-200"
           >
-            {lang === 'vi' ? 'XEM TRÊN AIRBNB' : 'Book Now'}
+            {lang === 'vi' ? 'XEM TRÊN AIRBNB' : 'View on Airbnb'}
           </a>
           <a
             href="https://beacons.ai/spicehomesaigon"
