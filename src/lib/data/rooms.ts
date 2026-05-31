@@ -79,6 +79,11 @@ export const rooms: Room[] = [
     images: [
       '/images/rooms/room-102/main.jpg',
       '/images/rooms/room-102/img2.jpg',
+      '/images/rooms/room-102/img3.jpg',
+      '/images/rooms/room-102/img4.jpg',
+      '/images/rooms/room-102/img5.jpg',
+      '/images/rooms/room-102/img6.jpg',
+      '/images/rooms/room-102/img7.jpg',
     ],
     amenities: [
       { vi: 'Điều hòa nhiệt độ', en: 'Air conditioning' },
