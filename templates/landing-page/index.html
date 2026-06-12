@@ -1,0 +1,88 @@
+<!-- @template name="Landing Page" description="Single-page SpiceHome landing scaffold — hero, featured rooms, CTA. Edit copy & swap photos." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpiceHome — Landing</title>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="./ds-base.js"></script>
+<style>
+  body { margin: 0; background: var(--bg-page); }
+</style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    // Wait for ds-base.js to finish loading the async bundle before reading the namespace.
+    window.addEventListener('load', () => {
+      const NS = window.SpiceHomeDesignSystem_e751f1;
+      const { Button, Tag, SectionLabel, Icon } = NS;
+
+      const ROOMS = [
+        { number: '101', img: '../../assets/images/rooms/room-101/main.jpg', tags: ['Balcony access', 'Natural light'] },
+        { number: '203', img: '../../assets/images/rooms/room-203/main.jpg', tags: ['Private balcony', 'City view'] },
+        { number: '121', img: '../../assets/images/rooms/room-121/main.jpg', tags: ['Modern style', 'Compact'] },
+      ];
+      const heading = { fontFamily: 'var(--font-display)', color: 'var(--text-heading)', margin: 0 };
+
+      function Landing() {
+        return (
+          <div>
+            {/* Top bar */}
+            <nav style={{ background: 'var(--bg-inverse)', padding: '0 var(--gutter)', height: 'var(--navbar-height)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontFamily: 'var(--font-display)', color: '#fff', fontSize: '1.25rem' }}>Spice<span style={{ color: 'var(--accent)' }}>Home</span></span>
+              <Button variant="ghostOnDark" size="sm" href="#book">Book Now</Button>
+            </nav>
+
+            {/* Hero */}
+            <section style={{ position: 'relative', minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+              <img src="../../assets/images/common/area3.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'var(--overlay-scrim)' }} />
+              <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: 760, padding: '0 var(--gutter)' }}>
+                <SectionLabel tone="light">Phú Nhuận · Saigon</SectionLabel>
+                <h1 style={{ ...heading, fontStyle: 'italic', color: '#fff', fontSize: 'clamp(2.25rem, 5vw, 3rem)', margin: 'var(--space-4) 0 var(--space-6)' }}>Your cozy home in the heart of Saigon</h1>
+                <Button variant="primary" href="#rooms">Explore Rooms</Button>
+              </div>
+            </section>
+
+            {/* Featured rooms */}
+            <section id="rooms" style={{ background: 'var(--bg-page)', padding: 'var(--section-y) var(--gutter)' }}>
+              <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto' }}>
+                <div style={{ textAlign: 'center', marginBottom: 'var(--space-14)' }}>
+                  <SectionLabel>Featured Rooms</SectionLabel>
+                  <h2 style={{ ...heading, fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', marginTop: 'var(--space-3)' }}>Your space</h2>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-6)' }}>
+                  {ROOMS.map(r => (
+                    <div key={r.number} style={{ background: 'var(--bg-surface)', border: 'var(--border)' }}>
+                      <div style={{ height: 220, overflow: 'hidden' }}><img src={r.img} alt={'Room ' + r.number} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                      <div style={{ padding: 'var(--space-4) var(--space-6)' }}>
+                        <p style={{ fontFamily: 'var(--font-label)', fontSize: 'var(--text-sm)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)', color: 'var(--accent)', margin: '0 0 var(--space-3)' }}>Room {r.number}</p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>{r.tags.map(t => <Tag key={t}>{t}</Tag>)}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* CTA */}
+            <section id="book" style={{ background: 'var(--accent)', padding: 'var(--space-16) var(--gutter)', textAlign: 'center' }}>
+              <div style={{ maxWidth: 'var(--container-prose)', margin: '0 auto' }}>
+                <h2 style={{ ...heading, color: '#fff', margin: '0 0 var(--space-4)', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>Ready to book?</h2>
+                <p style={{ color: 'rgba(255,255,255,0.85)', margin: '0 0 var(--space-8)', lineHeight: 'var(--leading-relaxed)' }}>Book through Airbnb — fast, secure, and covered by Guest Protection.</p>
+                <Button variant="onDark" size="lg" href="https://www.airbnb.com/users/show/479055797">Book on Airbnb</Button>
+              </div>
+            </section>
+          </div>
+        );
+      }
+      ReactDOM.createRoot(document.getElementById('app')).render(<Landing />);
+    });
+  </script>
+</body>
+</html>

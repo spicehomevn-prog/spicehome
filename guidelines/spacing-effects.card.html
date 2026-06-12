@@ -1,0 +1,28 @@
+<!-- @dsCard group="Spacing" viewport="700x200" name="Corners, Borders & Shadow" subtitle="Sharp by default. Hairline borders; one soft hover lift." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 28px 32px; background: var(--bg-page); font-family: var(--font-body); }
+  .row { display: flex; gap: 24px; align-items: flex-start; }
+  .demo { width: 150px; height: 92px; background: var(--bg-surface); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--text-muted); }
+  .b1 { border: var(--border); }
+  .b2 { border: var(--border-accent); }
+  .b3 { border: var(--border); box-shadow: var(--shadow-hover); }
+  .pill { border-radius: var(--radius-pill); width: 48px; height: 48px; background: var(--accent-soft); display:flex; align-items:center; justify-content:center; }
+  .cap { font-size: 11px; color: var(--text-body); font-weight: 600; margin-top: 10px; }
+  .sub { font-size: 11px; color: var(--text-muted); }
+  .col { display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="col"><div class="demo b1">Square</div><div class="cap">Default card</div><div class="sub">radius 0 · hairline</div></div>
+    <div class="col"><div class="demo b2">Accent edge</div><div class="cap">Active / focus</div><div class="sub">1px terracotta</div></div>
+    <div class="col"><div class="demo b3">Lifted</div><div class="cap">Hover</div><div class="sub">--shadow-hover</div></div>
+    <div class="col"><div class="demo" style="background:transparent;"><div class="pill"></div></div><div class="cap">Pill exception</div><div class="sub">icon chip / avatar</div></div>
+  </div>
+</body>
+</html>

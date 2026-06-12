@@ -1,0 +1,42 @@
+/* SpiceHome — Color tokens
+ * Warm, cream-and-terracotta palette. Quiet neutrals, a single earthy accent.
+ * Brand rule: NEVER introduce red. The accent is terracotta, not red.
+ */
+:root {
+  /* ---- Base palette ---- */
+  --sh-cream:        #FAFAF8;  /* page background — warm off-white */
+  --sh-white:        #FFFFFF;  /* surfaces, cards */
+  --sh-ink:          #1A1A18;  /* near-black — nav, footer, dark sections */
+  --sh-graphite:     #2C2C2A;  /* primary text */
+  --sh-stone:        #7A7A72;  /* muted / secondary text */
+  --sh-line:         #E8E4DC;  /* hairline borders, dividers */
+  --sh-terracotta:   #C4773B;  /* the accent — earthy Saigon clay */
+  --sh-terracotta-deep: #A8622E; /* accent hover / pressed */
+
+  /* Accent tints (terracotta over cream) */
+  --sh-terracotta-10: rgba(196, 119, 59, 0.10); /* icon chips, soft fills */
+  --sh-terracotta-05: rgba(196, 119, 59, 0.05); /* hover wash on cards */
+
+  /* ---- Semantic aliases — prefer these in components ---- */
+  --bg-page:         var(--sh-cream);
+  --bg-surface:      var(--sh-white);
+  --bg-inverse:      var(--sh-ink);     /* nav / footer / feature bands */
+
+  --text-heading:    var(--sh-graphite);
+  --text-body:       var(--sh-graphite);
+  --text-muted:      var(--sh-stone);
+  --text-on-inverse: #FFFFFF;
+  --text-on-inverse-muted: rgba(255, 255, 255, 0.65);
+
+  --accent:          var(--sh-terracotta);
+  --accent-hover:    var(--sh-terracotta-deep);
+  --accent-soft:     var(--sh-terracotta-10);
+  --accent-wash:     var(--sh-terracotta-05);
+
+  --border-hairline: var(--sh-line);
+  --border-on-inverse: rgba(255, 255, 255, 0.6);
+  --border-on-inverse-faint: rgba(255, 255, 255, 0.10);
+
+  --overlay-scrim:   rgba(0, 0, 0, 0.50); /* hero image darkening */
+  --overlay-deep:    rgba(0, 0, 0, 0.92); /* gallery lightbox */
+}

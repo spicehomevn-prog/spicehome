@@ -1,0 +1,102 @@
+// SpiceHome website data — bilingual content (subset of the real product data).
+// Attaches to window so each Babel-scoped screen script can read it.
+window.SH_DATA = {
+  rooms: [
+    {
+      number: '101', floor: 1, featured: true,
+      name: { vi: 'Phòng 101', en: 'Room 101' },
+      tagline: { vi: 'Không gian rộng rãi với cửa kính nhìn ra ban công', en: 'Spacious room with glass doors opening to a balcony' },
+      description: {
+        vi: 'Phòng rộng rãi tầng 1 với giường đôi êm ái, rèm xanh lam sang trọng và cửa kính lùa nhìn ra khu vực ngoài trời. Ánh sáng tự nhiên ngập tràn, thiết kế hiện đại ấm cúng.',
+        en: 'Spacious ground-floor room with a queen-size bed, elegant blue curtains, and sliding glass doors leading to an outdoor seating area. Flooded with natural light and finished with warm modern décor.',
+      },
+      images: ['../../assets/images/rooms/room-101/main.jpg', '../../assets/images/rooms/room-101/img2.jpg', '../../assets/images/rooms/room-101/img3.jpg', '../../assets/images/rooms/room-101/img4.jpg'],
+      highlights: [{ vi: 'Ban công', en: 'Balcony access' }, { vi: 'Cửa kính lùa', en: 'Sliding glass doors' }, { vi: 'Ánh sáng tự nhiên', en: 'Natural light' }, { vi: 'Tầng 1', en: 'Ground floor' }],
+      bed: { vi: 'Giường Queen (160x200cm)', en: 'Queen bed (160x200cm)' }, capacity: 2,
+      amenities: [{ vi: 'Điều hòa', en: 'Air conditioning' }, { vi: 'WiFi tốc độ cao', en: 'High-speed WiFi' }, { vi: 'Phòng tắm riêng', en: 'Private bathroom' }, { vi: 'Ban công', en: 'Balcony / outdoor area' }, { vi: 'Bàn làm việc', en: 'Work desk' }],
+      airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome101',
+    },
+    {
+      number: '121', floor: 1, featured: true,
+      name: { vi: 'Phòng 121', en: 'Room 121' },
+      tagline: { vi: 'Điểm nhấn xanh tươi mát, thiết kế compact hiện đại', en: 'Fresh green accent, modern compact design' },
+      description: {
+        vi: 'Phòng gọn gàng với điểm nhấn tường xanh lá độc đáo và giường platform phong cách. Không gian nhỏ gọn nhưng đầy đủ tiện nghi — lý tưởng cho khách du lịch một mình hoặc cặp đôi.',
+        en: 'A compact room with a distinctive green accent wall and a stylish platform bed. Small but fully equipped — ideal for solo travellers or couples looking for value and comfort.',
+      },
+      images: ['../../assets/images/rooms/room-121/main.jpg', '../../assets/images/rooms/room-121/img2.jpg'],
+      highlights: [{ vi: 'Phong cách hiện đại', en: 'Modern style' }, { vi: 'Compact', en: 'Compact' }, { vi: 'Điểm nhấn xanh lá', en: 'Green accent wall' }, { vi: 'Tầng 1', en: 'Ground floor' }],
+      bed: { vi: 'Giường Queen (160x200cm)', en: 'Queen bed (160x200cm)' }, capacity: 2,
+      amenities: [{ vi: 'Điều hòa', en: 'Air conditioning' }, { vi: 'WiFi tốc độ cao', en: 'High-speed WiFi' }, { vi: 'Phòng tắm riêng', en: 'Private bathroom' }, { vi: 'Tủ quần áo', en: 'Wardrobe' }],
+      airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome121',
+    },
+    {
+      number: '203', floor: 2, featured: true,
+      name: { vi: 'Phòng 203', en: 'Room 203' },
+      tagline: { vi: 'Ban công riêng, cửa kính rộng — ánh sáng tự nhiên ngập tràn', en: 'Private balcony, floor-to-ceiling windows — bathed in natural light' },
+      description: {
+        vi: 'Phòng đón nhiều ánh sáng tự nhiên cùng ban công riêng được bố trí bàn ghế để thư giãn. Tông màu beige ấm áp mang lại cảm giác tinh tế, thoải mái suốt thời gian lưu trú.',
+        en: 'Filled with natural light and featuring a private balcony with seating for relaxing. Warm beige tones create a refined, cosy, and comfortable stay.',
+      },
+      images: ['../../assets/images/rooms/room-203/main.jpg', '../../assets/images/rooms/room-203/img2.jpg'],
+      highlights: [{ vi: 'Ban công riêng', en: 'Private balcony' }, { vi: 'Cửa kính sàn trần', en: 'Floor-to-ceiling windows' }, { vi: 'View thành phố', en: 'City view' }, { vi: 'Tầng 2', en: '2nd floor' }],
+      bed: { vi: 'Giường Queen (160x200cm)', en: 'Queen bed (160x200cm)' }, capacity: 2,
+      amenities: [{ vi: 'Điều hòa', en: 'Air conditioning' }, { vi: 'WiFi tốc độ cao', en: 'High-speed WiFi' }, { vi: 'Phòng tắm riêng', en: 'Private bathroom' }, { vi: 'Ban công riêng', en: 'Private balcony with seating' }, { vi: 'Bàn làm việc', en: 'Work desk' }],
+      airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome203',
+    },
+    {
+      number: '103', floor: 1, featured: false,
+      name: { vi: 'Phòng 103', en: 'Room 103' },
+      tagline: { vi: 'Không gian yên tĩnh, ấm cúng cho kỳ nghỉ trọn vẹn', en: 'Quiet, cosy space for a complete rest' },
+      description: { vi: 'Phòng tầng 1 yên tĩnh với không gian ấm cúng. Thiết kế đơn giản tinh tế với gỗ tự nhiên và ánh sáng nhẹ nhàng.', en: 'A quiet ground-floor room with a cosy atmosphere. Simple, refined design using natural wood tones and soft lighting.' },
+      images: ['../../assets/images/rooms/room-103/main.jpg'],
+      highlights: [{ vi: 'Giường King', en: 'King bed' }, { vi: 'Không gian rộng', en: 'Spacious' }, { vi: 'Tầng 1', en: 'Ground floor' }],
+      bed: { vi: 'Giường King (180x200cm)', en: 'King bed (180x200cm)' }, capacity: 2,
+      amenities: [{ vi: 'Điều hòa', en: 'Air conditioning' }, { vi: 'WiFi tốc độ cao', en: 'High-speed WiFi' }, { vi: 'Phòng tắm riêng', en: 'Private bathroom' }, { vi: 'Bàn làm việc', en: 'Work desk' }],
+      airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome103',
+    },
+    {
+      number: '201', floor: 2, featured: false,
+      name: { vi: 'Phòng 201', en: 'Room 201' },
+      tagline: { vi: 'Không gian yên tĩnh, riêng tư', en: 'Quiet and private space' },
+      description: { vi: 'Nội thất hiện đại, tông màu ấm áp tạo cảm giác thư thái. Vị trí thuận tiện gần các tiện ích chung của tòa nhà.', en: 'Modern furnishings in warm tones create a relaxing ambiance. Conveniently located near shared building amenities.' },
+      images: ['../../assets/images/rooms/room-201/main.jpg'],
+      highlights: [{ vi: 'View đường phố', en: 'Street view' }, { vi: 'Thoáng đãng', en: 'Airy' }, { vi: 'Tầng 2', en: '2nd floor' }],
+      bed: { vi: 'Giường đôi (140x200cm)', en: 'Double bed (140x200cm)' }, capacity: 2,
+      amenities: [{ vi: 'Điều hòa', en: 'Air conditioning' }, { vi: 'WiFi tốc độ cao', en: 'High-speed WiFi' }, { vi: 'Phòng tắm riêng', en: 'Private bathroom' }, { vi: 'Bàn làm việc', en: 'Work desk' }],
+      airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome201',
+    },
+    {
+      number: '222', floor: 2, featured: false,
+      name: { vi: 'Phòng 222', en: 'Room 222' },
+      tagline: { vi: 'Tiện nghi cao cấp, không gian thoáng đãng tầng 2', en: 'Premium amenities in an airy second-floor setting' },
+      description: { vi: 'Phòng Deluxe tầng 2 với nội thất cao cấp và không gian thoáng đãng. Thiết kế hiện đại, tối giản nhưng vẫn ấm áp và tiện nghi.', en: 'A second-floor Deluxe room with premium furnishings and open space. Modern, minimalist design that remains warm and comfortable.' },
+      images: ['../../assets/images/rooms/room-222/main.jpg'],
+      highlights: [{ vi: 'Cao cấp', en: 'Premium' }, { vi: 'Không gian mở', en: 'Open space' }, { vi: 'Tầng 2', en: '2nd floor' }],
+      bed: { vi: 'Giường Queen (160x200cm)', en: 'Queen bed (160x200cm)' }, capacity: 2,
+      amenities: [{ vi: 'Điều hòa', en: 'Air conditioning' }, { vi: 'WiFi tốc độ cao', en: 'High-speed WiFi' }, { vi: 'Phòng tắm riêng', en: 'Private bathroom' }, { vi: 'Máy sấy tóc', en: 'Hair dryer' }],
+      airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome222',
+    },
+  ],
+  guide: {
+    food: [
+      { name: { vi: 'Phở Tân Hiệp', en: 'Phở Tân Hiệp' }, description: { vi: 'Quán phở bò thảo mộc truyền thống — nước dùng ninh lâu. Cách nhà vài bước chân.', en: 'Traditional herbal beef noodle soup — slow-simmered broth. Just a short walk from the homestay.' }, address: '122 Lê Văn Sỹ, Phú Nhuận', hours: '6:00 – 23:00', mapsUrl: '#' },
+      { name: { vi: 'Bún Bò Trang', en: 'Bún Bò Trang' }, description: { vi: 'Bún bò Huế cay nồng, nước dùng sánh ngọt — buổi sáng tuyệt vời.', en: 'Spicy Huế-style beef noodle soup with a rich broth — a great way to start the morning.' }, address: '84/5 Trần Hữu Trang, Phú Nhuận', hours: '6:00 – 12:00', mapsUrl: '#' },
+      { name: { vi: "Bún Thịt Lợn Bà Nội", en: "Grandma's Flying Pork Noodles" }, description: { vi: 'Quán bún thịt heo nổi tiếng — thịt mềm tan, nước dùng thanh ngọt.', en: 'Famous neighbourhood pork noodle shop — tender meat, clear savoury broth.' }, address: '76A Trần Hữu Trang', hours: '6:00 – 18:00', tip: { vi: 'Nên đến sớm vì hết rất nhanh!', en: 'Come early — it sells out fast!' }, mapsUrl: '#' },
+    ],
+    shopping: [
+      { name: { vi: 'Bách Hóa Xanh', en: 'Bách Hóa Xanh Supermarket' }, description: { vi: 'Siêu thị tiện lợi — thực phẩm tươi, đồ thiết yếu, giá niêm yết rõ ràng.', en: 'Convenient grocery — fresh food, daily essentials, clearly labelled prices.' }, address: '123 Trần Hữu Trang, Phú Nhuận', hours: '6:00 – 21:00', tip: { vi: 'Giá niêm yết rõ ràng, không cần mặc cả.', en: 'Fixed prices, no bargaining needed.' } },
+      { name: { vi: 'Circle K (24/7)', en: 'Circle K (Open 24/7)' }, description: { vi: 'Cửa hàng tiện lợi mở cửa 24/7 — lý tưởng cho lúc cần mua đồ khuya.', en: 'Convenience store open around the clock — perfect for late-night essentials.' }, address: '135 Lê Văn Sỹ, Phú Nhuận', hours: 'Open 24/7' },
+      { name: { vi: 'Chợ Trần Hữu Trang', en: 'Trần Hữu Trang Local Market' }, description: { vi: 'Chợ truyền thống — rau củ tươi và đặc sản vùng.', en: 'Traditional local market — fresh produce and regional specialties.' }, address: '84C Trần Hữu Trang, Phú Nhuận', hours: '6:00 – 17:00', tip: { vi: 'Nên đi cùng người nói tiếng Việt để tránh bị tính giá cao.', en: 'Best visited with a Vietnamese speaker to avoid tourist pricing.' } },
+    ],
+    attractions: [
+      { name: { vi: 'Phố đi bộ Nguyễn Huệ', en: 'Nguyễn Huệ Walking Street' }, description: { vi: 'Phố đi bộ biểu tượng — nhìn thấy Nhà hát Thành phố, đặt xe bus 2 tầng từ đây.', en: "A signature landmark — view the Opera House and board the sightseeing bus from here." }, tip: { vi: 'Rực rỡ nhất vào buổi tối cuối tuần.', en: 'Most vibrant on weekend evenings.' } },
+      { name: { vi: 'Dinh Độc Lập', en: 'Independence Palace' }, description: { vi: 'Di tích lịch sử quan trọng — bảo tàng mở cửa tham quan, kiến trúc thập niên 60.', en: 'Significant historical landmark — a public museum with distinctive 1960s architecture.' } },
+      { name: { vi: 'Địa đạo Củ Chi', en: 'Củ Chi Tunnels' }, description: { vi: 'Hệ thống địa đạo huyền thoại — cách trung tâm khoảng 1.5 giờ xe.', en: 'Legendary underground tunnel network — about 1.5 hours from the city centre.' }, tip: { vi: 'Đặt tour trên KLook để tránh bị lừa đảo.', en: 'Book through KLook to avoid scams.' } },
+    ],
+    transport: [
+      { name: { vi: 'Ứng dụng Grab', en: 'Grab App' }, description: { vi: 'Ứng dụng đặt xe phổ biến nhất Việt Nam — giá rẻ, tiện lợi, giao đồ ăn tới phòng.', en: 'The most popular ride-hailing app in Vietnam — affordable, reliable, also delivers food.' }, tip: { vi: 'Tải Grab trước khi đến — thanh toán thẻ hoặc tiền mặt.', en: 'Download Grab before you arrive — pay by card or cash.' } },
+      { name: { vi: 'Xe buýt công cộng', en: 'Public Bus' }, description: { vi: 'Nhiều tuyến buýt gần nhà đến trung tâm và sân bay.', en: 'Multiple bus routes nearby to the city centre and airport.' }, tip: { vi: 'Nhà ga xe lửa cách homestay chỉ 5 phút đi bộ.', en: 'The railway station is just 5 minutes on foot.' } },
+    ],
+  },
+}

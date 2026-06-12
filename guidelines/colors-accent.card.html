@@ -1,0 +1,37 @@
+<!-- @dsCard group="Colors" viewport="700x190" name="Accent — Terracotta" subtitle="The single brand accent. Never red." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg-page); }
+  .row { display: flex; gap: 16px; }
+  .sw { flex: 1; }
+  .chip { height: 84px; border: var(--border); display: flex; align-items: flex-end; padding: 10px; box-sizing: border-box; }
+  .name { font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--text-body); margin-top: 10px; }
+  .hex { font-family: var(--font-body); font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; }
+  .lbl { font-family: var(--font-body); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw">
+      <div class="chip" style="background: var(--sh-terracotta);"><span class="lbl" style="color:#fff;">Accent</span></div>
+      <div class="name">Terracotta</div><div class="hex">#C4773B · --accent</div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background: var(--sh-terracotta-deep);"><span class="lbl" style="color:#fff;">Hover</span></div>
+      <div class="name">Terracotta Deep</div><div class="hex">#A8622E · --accent-hover</div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background: var(--accent-soft);"><span class="lbl" style="color:var(--accent);">Soft 10%</span></div>
+      <div class="name">Terracotta Tint</div><div class="hex">rgba · --accent-soft</div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background: var(--accent-wash);"><span class="lbl" style="color:var(--accent);">Wash 5%</span></div>
+      <div class="name">Card Hover Wash</div><div class="hex">rgba · --accent-wash</div>
+    </div>
+  </div>
+</body>
+</html>

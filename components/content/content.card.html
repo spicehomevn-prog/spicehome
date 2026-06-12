@@ -1,0 +1,57 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Content — Room, Guide & Host cards" subtitle="Room card, local-guide listing, and host card." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg-page); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; align-items: start; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+
+  <script type="text/babel">
+    const { RoomCard, GuideCard, HostCard } = window.SpiceHomeDesignSystem_e751f1
+    const room = {
+      number: '101',
+      name: { vi: 'Phòng 101', en: 'Room 101' },
+      images: ['../../assets/images/rooms/room-101/main.jpg', '../../assets/images/rooms/room-101/img2.jpg', '../../assets/images/rooms/room-101/img3.jpg'],
+      highlights: [
+        { vi: 'Ban công', en: 'Balcony access' },
+        { vi: 'Cửa kính lùa', en: 'Sliding glass doors' },
+        { vi: 'Ánh sáng tự nhiên', en: 'Natural light' },
+      ],
+    }
+    const guide = {
+      name: { vi: 'Phở Hòa Pasteur', en: 'Phở Hòa Pasteur' },
+      description: { vi: '', en: 'A Saigon institution since 1968. Rich, herby broth and generous portions, five minutes by motorbike.' },
+      address: '260C Pasteur, Phú Nhuận',
+      hours: '6:00 – 22:00',
+      tip: { vi: '', en: 'Go early — the morning crowd is half the experience.' },
+      mapsUrl: '#',
+    }
+    function Demo() {
+      return (
+        <div className="grid">
+          <RoomCard room={room} layout="card" lang="en" />
+          <GuideCard item={guide} lang="en" />
+          <HostCard name="Hải (Hailey)" initial="H" role="Main Host"
+            blurb="Speaks Vietnamese, English and communicative Mandarin. Specialises in local food, attractions, and all things Saigon."
+            contacts={[
+              { icon: 'message-circle', label: 'WhatsApp / Viber / Zalo', href: '#' },
+              { icon: 'phone', label: '+84 904 955 479', href: 'tel:+84904955479' },
+            ]} />
+        </div>
+      )
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo />)
+  </script>
+</body>
+</html>

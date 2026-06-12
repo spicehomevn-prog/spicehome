@@ -1,0 +1,178 @@
+<!-- @template name="Room Detail" description="Reusable bilingual room page — Opening · Không gian/Space · Tiện ích/Access · Lưu ý/Notes. Swap ROOM_ID for any room." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpiceHome — Room Detail</title>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="./ds-base.js"></script>
+<script src="./rooms-data.js"></script>
+<style>
+  body { margin: 0; background: var(--bg-page); }
+  .sh-section { padding: var(--section-y) var(--gutter); }
+  .sh-wrap { max-width: var(--container-max); margin: 0 auto; }
+  .sh-prose { max-width: var(--container-prose); }
+</style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    // ─── Swap this to render any room. Valid IDs: 101, 102, 103, 121, 201, 203, 221, 222 ───
+    const ROOM_ID = '101';
+
+    window.addEventListener('load', () => {
+      const NS = window.SpiceHomeDesignSystem_e751f1;
+      const { Button, Tag, SectionLabel, Icon } = NS;
+      const ROOM = window.SH_ROOMS[ROOM_ID];
+      const NOTES = window.SH_NOTES;
+      const CONTACTS = window.SH_CONTACTS;
+
+      const heading = { fontFamily: 'var(--font-display)', color: 'var(--text-heading)', margin: 0, lineHeight: 1.15 };
+
+      // Bilingual section eyebrow + heading
+      function SectionHead({ kicker, titleVi, titleEn, lang, tone }) {
+        return (
+          <div style={{ marginBottom: 'var(--space-10)' }}>
+            <SectionLabel tone={tone}>{kicker}</SectionLabel>
+            <h2 style={{ ...heading, color: tone === 'light' ? '#fff' : 'var(--text-heading)', fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', marginTop: 'var(--space-3)' }}>
+              {lang === 'vi' ? titleVi : titleEn}
+            </h2>
+          </div>
+        );
+      }
+
+      function RoomDetail() {
+        const [lang, setLang] = React.useState('en');
+        const t = (b) => (b && typeof b === 'object' ? b[lang] : b);
+        const roomLabel = lang === 'vi' ? `Phòng ${ROOM.number}` : `Room ${ROOM.number}`;
+        const floorLabel = lang === 'vi' ? `Tầng ${ROOM.floor}` : `Floor ${ROOM.floor}`;
+        const guestLabel = lang === 'vi' ? `Tối đa ${ROOM.capacity} khách` : `Up to ${ROOM.capacity} guests`;
+
+        return (
+          <div>
+            {/* Top bar */}
+            <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: 'var(--bg-inverse)', padding: '0 var(--gutter)', height: 'var(--navbar-height)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <a href="../../ui_kits/website/index.html" style={{ fontFamily: 'var(--font-display)', color: '#fff', fontSize: '1.25rem' }}>Spice<span style={{ color: 'var(--accent)' }}>Home</span></a>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-5)' }}>
+                <button onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-label)', fontSize: 'var(--text-xs)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)' }}>{lang === 'vi' ? 'EN' : 'VI'}</button>
+                <Button variant="ghostOnDark" size="sm" href={ROOM.airbnbUrl}>{lang === 'vi' ? 'Đặt Phòng' : 'Book Now'}</Button>
+              </div>
+            </nav>
+
+            {/* Hero image + title */}
+            <header style={{ position: 'relative', minHeight: '64vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
+              <img src={ROOM.images[0]} alt={t(ROOM.name)} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.15) 55%, rgba(0,0,0,0.25))' }} />
+              <div className="sh-wrap" style={{ position: 'relative', zIndex: 1, padding: 'var(--space-12) var(--gutter)', width: '100%', boxSizing: 'border-box' }}>
+                <SectionLabel tone="light">{floorLabel} · Phú Nhuận</SectionLabel>
+                <h1 style={{ ...heading, fontStyle: 'italic', color: '#fff', fontSize: 'clamp(2.25rem, 5vw, 3rem)', margin: 'var(--space-3) 0 var(--space-4)' }}>{roomLabel}</h1>
+                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'var(--text-lg)', maxWidth: 600, margin: 0, lineHeight: 'var(--leading-relaxed)' }}>{t(ROOM.tagline)}</p>
+              </div>
+            </header>
+
+            {/* Meta bar */}
+            <div style={{ background: 'var(--bg-inverse)', borderTop: '1px solid var(--accent)' }}>
+              <div className="sh-wrap" style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-8)', padding: 'var(--space-5) var(--gutter)' }}>
+                {[
+                  { icon: 'bed-double', label: t(ROOM.bed) },
+                  { icon: 'users', label: guestLabel },
+                  { icon: 'home', label: floorLabel },
+                ].map((m, i) => (
+                  <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'rgba(255,255,255,0.85)', fontSize: 'var(--text-sm)' }}>
+                    <Icon name={m.icon} size={16} style={{ color: 'var(--accent)' }} />{m.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* 1 — OPENING */}
+            <section className="sh-section" style={{ background: 'var(--bg-surface)' }}>
+              <div className="sh-wrap sh-prose">
+                <SectionHead kicker={lang === 'vi' ? 'Mở đầu' : 'Opening'} titleVi="Chào mừng đến với không gian của bạn" titleEn="Welcome to your space" lang={lang} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
+                  {ROOM.opening[lang].map((p, i) => (
+                    <p key={i} style={{ color: 'var(--text-muted)', fontSize: 'var(--text-lg)', lineHeight: 'var(--leading-relaxed)', margin: 0 }}>{p}</p>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 2 — KHÔNG GIAN / SPACE */}
+            <section className="sh-section" style={{ background: 'var(--bg-page)' }}>
+              <div className="sh-wrap">
+                <SectionHead kicker={lang === 'vi' ? 'Không gian' : 'The Space'} titleVi="Mỗi góc một câu chuyện" titleEn="Every corner tells a story" lang={lang} />
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 'var(--space-3)', marginBottom: 'var(--space-8)' }}>
+                  {ROOM.images.map((src, i) => (
+                    <div key={i} className="sh-gimg" style={{ aspectRatio: i === 0 ? '16/10' : '4/3', gridColumn: i === 0 ? '1 / -1' : 'auto', overflow: 'hidden', border: 'var(--border)' }}>
+                      <img src={src} alt={`${t(ROOM.name)} ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform var(--duration-medium) var(--ease-out)' }} />
+                    </div>
+                  ))}
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
+                  {ROOM.highlights.map((h, i) => <Tag key={i} tone="accent">{t(h)}</Tag>)}
+                </div>
+              </div>
+            </section>
+
+            {/* 3 — TIỆN ÍCH / ACCESS */}
+            <section className="sh-section" style={{ background: 'var(--bg-surface)' }}>
+              <div className="sh-wrap">
+                <SectionHead kicker={lang === 'vi' ? 'Tiện ích' : 'Access & Amenities'} titleVi="Mọi thứ bạn cần" titleEn="Everything you need" lang={lang} />
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 'var(--space-4) var(--space-8)' }}>
+                  {ROOM.amenities.map((a, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', padding: 'var(--space-3) 0', borderBottom: 'var(--border)' }}>
+                      <span style={{ width: 32, height: 32, flexShrink: 0, borderRadius: 'var(--radius-pill)', background: 'var(--accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Icon name="star" size={14} style={{ color: 'var(--accent)' }} />
+                      </span>
+                      <span style={{ color: 'var(--text-body)', fontSize: 'var(--text-base)' }}>{t(a)}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 4 — LƯU Ý / NOTES */}
+            <section className="sh-section" style={{ position: 'relative', background: 'var(--bg-inverse)', overflow: 'hidden' }}>
+              <div className="sh-wrap sh-prose" style={{ position: 'relative', zIndex: 1 }}>
+                <SectionHead kicker={lang === 'vi' ? 'Lưu ý' : 'Good to Know'} titleVi="Trước khi bạn đến" titleEn="Before you arrive" lang={lang} tone="light" />
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
+                  {NOTES.map((n, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
+                      <Icon name="lightbulb" size={16} style={{ color: 'var(--accent)', marginTop: 3, flexShrink: 0 }} />
+                      <span style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 'var(--leading-relaxed)' }}>{t(n)}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div style={{ marginTop: 'var(--space-8)', paddingTop: 'var(--space-6)', borderTop: '1px solid var(--border-on-inverse-faint)', display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)', alignItems: 'center' }}>
+                  <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 'var(--text-sm)' }}>{lang === 'vi' ? 'Hỗ trợ 24/7:' : 'Reach us anytime:'}</span>
+                  {CONTACTS.map((c, i) => (
+                    <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'rgba(255,255,255,0.85)', fontSize: 'var(--text-sm)' }}>
+                      <Icon name="phone" size={13} style={{ color: 'var(--accent)' }} />{c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Booking CTA */}
+            <section style={{ background: 'var(--accent)', padding: 'var(--space-16) var(--gutter)', textAlign: 'center' }}>
+              <div className="sh-wrap sh-prose" style={{ margin: '0 auto' }}>
+                <h2 style={{ ...heading, color: '#fff', fontSize: 'clamp(1.5rem, 3vw, 2rem)', margin: '0 0 var(--space-4)' }}>{lang === 'vi' ? `Đặt ${roomLabel} ngay` : `Book ${roomLabel}`}</h2>
+                <p style={{ color: 'rgba(255,255,255,0.85)', margin: '0 0 var(--space-8)', lineHeight: 'var(--leading-relaxed)' }}>{lang === 'vi' ? 'Đặt qua Airbnb — nhanh chóng, an toàn và được bảo vệ bởi Airbnb Guest Protection.' : 'Book through Airbnb — fast, secure and covered by Airbnb Guest Protection.'}</p>
+                <Button variant="onDark" size="lg" href={ROOM.airbnbUrl}>{lang === 'vi' ? 'Đặt trên Airbnb' : 'Book on Airbnb'}</Button>
+              </div>
+            </section>
+
+            <style dangerouslySetInnerHTML={{ __html: `.sh-gimg:hover img { transform: scale(1.04); }` }} />
+          </div>
+        );
+      }
+      ReactDOM.createRoot(document.getElementById('app')).render(<RoomDetail />);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* SpiceHome — Effects: radii, borders, shadows, motion
+ * House style is SHARP. Corners are square; emphasis comes from hairline
+ * borders and a single soft hover shadow — never heavy drop-shadows.
+ */
+:root {
+  /* ---- Corner radii ---- */
+  --radius-none: 0;       /* default — cards, buttons, inputs are all square */
+  --radius-pill: 9999px;  /* the ONE exception: round icon chips & avatars */
+
+  /* ---- Borders ---- */
+  --border-width: 1px;
+  --border: var(--border-width) solid var(--border-hairline);
+  --border-accent: var(--border-width) solid var(--accent);
+
+  /* ---- Shadows ---- (used sparingly; cards are flat at rest) */
+  --shadow-none: none;
+  --shadow-hover: 0 4px 16px rgba(26, 26, 24, 0.08);  /* card lift on hover */
+  --shadow-modal: 0 24px 60px rgba(0, 0, 0, 0.45);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --duration-fast:   200ms; /* @kind other */ /* color / hover transitions */
+  --duration-medium: 500ms; /* @kind other */ /* image zoom on hover */
+  --duration-slow:   700ms; /* @kind other */ /* scroll-reveal fade-up */
+
+  --transition-color: color var(--duration-fast) ease,
+                      background-color var(--duration-fast) ease,
+                      border-color var(--duration-fast) ease;
+
+  /* ---- Scroll-reveal distance ---- */
+  --reveal-offset: 28px;
+}

@@ -1,0 +1,64 @@
+<!-- @dsCard group="Website" viewport="1280x760" name="SpiceHome Website" subtitle="Interactive homestay site — Home, Rooms, Local Guide, About (VI/EN)." -->
+<!-- @startingPoint section="Website" subtitle="Full SpiceHome marketing site — bilingual, click-through" viewport="1280x760" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpiceHome — Homestay in Saigon</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page); }
+  #app { min-height: 100vh; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+
+  <script src="data.js"></script>
+  <script type="text/babel" src="Reveal.jsx"></script>
+  <script type="text/babel" src="Navbar.jsx"></script>
+  <script type="text/babel" src="Hero.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+  <script type="text/babel" src="GalleryModal.jsx"></script>
+  <script type="text/babel" src="HomePage.jsx"></script>
+  <script type="text/babel" src="RoomsPage.jsx"></script>
+  <script type="text/babel" src="GuidePage.jsx"></script>
+  <script type="text/babel" src="AboutPage.jsx"></script>
+
+  <script type="text/babel">
+    function App() {
+      const [lang, setLang] = React.useState('en')
+      const [route, setRoute] = React.useState('home')
+      const [gallery, setGallery] = React.useState(null)
+
+      const go = (r) => { setRoute(r); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+      const openGallery = (room) => setGallery(room)
+
+      const pages = {
+        home:  <window.SH_HomePage lang={lang} setRoute={go} openGallery={openGallery} />,
+        rooms: <window.SH_RoomsPage lang={lang} openGallery={openGallery} />,
+        guide: <window.SH_GuidePage lang={lang} />,
+        about: <window.SH_AboutPage lang={lang} />,
+      }
+
+      const roomLabel = gallery ? (lang === 'vi' ? `Phòng ${gallery.number}` : `Room ${gallery.number}`) : ''
+
+      return (
+        <>
+          <window.SH_Navbar lang={lang} setLang={setLang} route={route} setRoute={go} />
+          <main style={{ flex: 1 }}>{pages[route]}</main>
+          <window.SH_Footer lang={lang} setRoute={go} />
+          {gallery && <window.SH_GalleryModal images={gallery.images} roomLabel={roomLabel} onClose={() => setGallery(null)} />}
+        </>
+      )
+    }
+    ReactDOM.createRoot(document.getElementById('app')).render(<App />)
+  </script>
+</body>
+</html>

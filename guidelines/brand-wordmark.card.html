@@ -1,0 +1,35 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Wordmark" subtitle="Spice in foreground, Home in terracotta. Playfair Display." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; display: flex; }
+  .panel { flex: 1; display: flex; align-items: center; justify-content: center; height: 200px; box-sizing: border-box; }
+  .light { background: var(--bg-page); }
+  .dark { background: var(--bg-inverse); }
+  .wm { font-family: var(--font-display); font-size: 34px; letter-spacing: 0.02em; }
+  .on-light { color: var(--text-heading); }
+  .on-dark { color: #fff; }
+  .accent { color: var(--accent); }
+  .tag { display:block; font-family: var(--font-label); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 8px; text-align: center; }
+  .tag.l { color: var(--text-muted); }
+  .tag.d { color: rgba(255,255,255,0.5); }
+</style>
+</head>
+<body>
+  <div class="panel light">
+    <div>
+      <div class="wm on-light">Spice<span class="accent">Home</span></div>
+      <span class="tag l">Phú Nhuận · Sài Gòn</span>
+    </div>
+  </div>
+  <div class="panel dark">
+    <div>
+      <div class="wm on-dark">Spice<span class="accent">Home</span></div>
+      <span class="tag d">Phú Nhuận · Sài Gòn</span>
+    </div>
+  </div>
+</body>
+</html>

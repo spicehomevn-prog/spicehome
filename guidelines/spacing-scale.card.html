@@ -1,0 +1,26 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Spacing Scale" subtitle="4px base. Generous editorial rhythm." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 28px 32px; background: var(--bg-surface); font-family: var(--font-body); }
+  .row { display: flex; align-items: flex-end; gap: 18px; }
+  .item { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .bar { background: var(--accent); height: 28px; }
+  .tk { font-size: 11px; color: var(--text-muted); letter-spacing: 0.03em; }
+  .px { font-size: 12px; font-weight: 600; color: var(--text-body); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="bar" style="width:var(--space-2);"></div><div class="px">8</div><div class="tk">--space-2</div></div>
+    <div class="item"><div class="bar" style="width:var(--space-4);"></div><div class="px">16</div><div class="tk">--space-4</div></div>
+    <div class="item"><div class="bar" style="width:var(--space-6);"></div><div class="px">24</div><div class="tk">--space-6</div></div>
+    <div class="item"><div class="bar" style="width:var(--space-10);"></div><div class="px">40</div><div class="tk">--space-10</div></div>
+    <div class="item"><div class="bar" style="width:var(--space-16);"></div><div class="px">64</div><div class="tk">--space-16</div></div>
+    <div class="item"><div class="bar" style="width:var(--space-20);"></div><div class="px">80</div><div class="tk">--space-20</div></div>
+  </div>
+</body>
+</html>
