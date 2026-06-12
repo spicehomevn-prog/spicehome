@@ -10,7 +10,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 
 const NOTES = [
-  { vi: 'Nhận phòng từ 14:00 · Trả phòng trước 12:00', en: 'Check-in from 2:00 PM · Check-out by 12:00 PM' },
+  { vi: 'Nhận phòng từ 14:00 · Trả phòng trước 11:00', en: 'Check-in from 2:00 PM · Check-out by 11:00 AM' },
   { vi: 'Nhắn tin trước cho host để được hỗ trợ nhận phòng thuận tiện nhất', en: 'Message your host ahead of time for the smoothest check-in' },
   { vi: 'Không hút thuốc trong phòng · Giữ yên lặng sau 22:00', en: 'No smoking indoors · Quiet hours after 10:00 PM' },
   { vi: 'Mang theo CCCD/hộ chiếu để đăng ký lưu trú', en: 'Bring your ID/passport for stay registration' },
