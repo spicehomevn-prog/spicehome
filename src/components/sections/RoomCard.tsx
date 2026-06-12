@@ -76,23 +76,21 @@ export function RoomCard({ room, layout = 'card' }: Props) {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <a
-              href={room.airbnbUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={`/rooms/${room.id}`}
               className="inline-block bg-accent text-white text-xs font-medium uppercase tracking-widest
                          px-7 py-3 hover:bg-accent-hover transition-colors duration-200"
             >
-              {lang === 'vi' ? 'XEM TRÊN AIRBNB' : 'Book on Airbnb'}
-            </a>
+              {lang === 'vi' ? 'Xem Chi Tiết' : 'View Details'}
+            </Link>
             <a
-              href="https://beacons.ai/spicehomesaigon"
+              href={room.airbnbUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block border border-accent text-accent text-xs font-medium uppercase tracking-widest
                          px-7 py-3 hover:bg-accent hover:text-white transition-colors duration-200"
             >
-              {lang === 'vi' ? 'Đặt Trực Tiếp' : 'Book Directly'}
+              {lang === 'vi' ? 'Đặt trên Airbnb' : 'Book on Airbnb'}
             </a>
           </div>
         </div>
@@ -128,11 +126,11 @@ export function RoomCard({ room, layout = 'card' }: Props) {
       </button>
 
       {/* Content */}
-      <div className="px-6 py-4">
+      <div className="px-6 py-5">
         <p className="text-sm font-medium uppercase tracking-widest text-accent mb-3">
           {roomLabel}
         </p>
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5 mb-5">
           {room.highlights.map((h, i) => (
             <span
               key={i}
@@ -142,6 +140,13 @@ export function RoomCard({ room, layout = 'card' }: Props) {
             </span>
           ))}
         </div>
+        <Link
+          href={`/rooms/${room.id}`}
+          className="inline-block border border-accent text-accent text-xs font-medium uppercase tracking-widest
+                     px-5 py-2.5 hover:bg-accent hover:text-white transition-colors duration-200"
+        >
+          {lang === 'vi' ? 'Xem Chi Tiết' : 'View Details'}
+        </Link>
       </div>
     </div>
   )
