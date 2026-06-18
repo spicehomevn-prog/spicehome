@@ -8,6 +8,7 @@ import { useLang } from '@/context/LanguageContext'
 import { useGallery } from '@/context/GalleryContext'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
+import { AvailabilityCalendar } from '@/components/ui/AvailabilityCalendar'
 
 const NOTES = [
   { vi: 'Nhận phòng từ 14:00 · Trả phòng trước 11:00', en: 'Check-in from 2:00 PM · Check-out by 11:00 AM' },
@@ -160,7 +161,27 @@ export function RoomDetailPage({ room }: Props) {
         </div>
       </section>
 
-      {/* 4. Good to Know */}
+      {/* 4. Availability */}
+      <section id="availability" className="bg-background py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <AnimateOnScroll className="mb-8">
+            <SectionLabel>{lang === 'vi' ? 'Lịch trống' : 'Availability'}</SectionLabel>
+            <h2 className="font-playfair text-3xl md:text-4xl text-primary-text mt-3 mb-2">
+              {lang === 'vi' ? 'Kiểm tra lịch đặt phòng' : 'Check availability'}
+            </h2>
+            <p className="text-muted-text text-sm">
+              {lang === 'vi'
+                ? 'Ngày bôi màu = đã có khách · Ngày trắng = còn trống'
+                : 'Highlighted dates = booked · White = available'}
+            </p>
+          </AnimateOnScroll>
+          <AnimateOnScroll>
+            <AvailabilityCalendar calendarSources={room.calendarSources} lang={lang} />
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* 5. Good to Know */}
       <section className="bg-dark py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateOnScroll className="mb-10">

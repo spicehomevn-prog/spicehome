@@ -9,6 +9,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { featuredRooms } from '@/lib/data/rooms'
 import { useLang } from '@/context/LanguageContext'
+import Testimonials from '@/components/sections/Testimonials'
 
 const whyItems = [
   {
@@ -123,7 +124,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Local Guide Teaser */}
+      {/* 5. Testimonials */}
+      <Testimonials bgImage="/images/common-area.jpg" />
+
+      {/* 6. Local Guide Teaser */}
       <section className="relative bg-dark py-20 md:py-28 overflow-hidden">
         <Image
           src="/images/common/area1.jpg"
@@ -155,7 +159,7 @@ export default function HomePage() {
         </AnimateOnScroll>
       </section>
 
-      {/* 6. Book CTA */}
+      {/* 7. Book CTA */}
       <section className="bg-accent py-16 md:py-20">
         <AnimateOnScroll className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="font-playfair text-3xl md:text-4xl text-white mb-4">

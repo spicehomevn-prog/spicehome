@@ -1,5 +1,13 @@
 import type { BilingualText } from '@/context/LanguageContext'
 
+export interface CalendarSource {
+  /** 'google' → Google Calendar API (public calendar)
+   *  'ical'   → Airbnb iCal URL proxied via /.netlify/functions/ical-proxy */
+  type: 'google' | 'ical'
+  id: string      // Google Calendar ID for 'google'; iCal URL for 'ical'
+  filter?: string // 'google' only: only include events whose summary starts with this
+}
+
 export interface Room {
   id: string
   number: string
@@ -15,6 +23,7 @@ export interface Room {
   amenities: BilingualText[]
   airbnbUrl: string
   featured: boolean
+  calendarSources: CalendarSource[]
 }
 
 export const rooms: Room[] = [
@@ -57,6 +66,10 @@ export const rooms: Room[] = [
     ],
     airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome101',
     featured: true,
+    calendarSources: [
+      { type: 'ical', id: 'https://www.airbnb.com.vn/calendar/ical/1051918800923923074.ics?s=ae5ecb1259f972081806968bb89522b0' },
+      { type: 'google', id: 'spicehomevn@gmail.com', filter: 'R101' },
+    ],
   },
   {
     id: 'room-102',
@@ -94,6 +107,10 @@ export const rooms: Room[] = [
     ],
     airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome102',
     featured: false,
+    calendarSources: [
+      { type: 'ical', id: 'https://www.airbnb.com.vn/calendar/ical/1083144918082203623.ics?s=04e368d4abbac97fe98351a4cb3d9bb8' },
+      { type: 'google', id: 'fedefb218e43a2701ae730c2660c8d55b6b754186b2d9afe41042ae7e5ae6b62@group.calendar.google.com' },
+    ],
   },
   {
     id: 'room-103',
@@ -129,6 +146,10 @@ export const rooms: Room[] = [
     ],
     airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome103',
     featured: false,
+    calendarSources: [
+      { type: 'ical', id: 'https://www.airbnb.com/calendar/ical/1340570446931487866.ics?t=6c351b7d6aea48e68685ed6a8fe21218' },
+      { type: 'google', id: 'spicehomevn@gmail.com', filter: 'R103' },
+    ],
   },
   {
     id: 'room-121',
@@ -165,6 +186,10 @@ export const rooms: Room[] = [
     ],
     airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome121',
     featured: true,
+    calendarSources: [
+      { type: 'ical', id: 'https://www.airbnb.com/calendar/ical/1231119321481630276.ics?t=15762fa74a05439faaf7432863adc451' },
+      { type: 'google', id: 'spicehomevn@gmail.com', filter: 'R121' },
+    ],
   },
   {
     id: 'room-201',
@@ -200,6 +225,10 @@ export const rooms: Room[] = [
     ],
     airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome201',
     featured: false,
+    calendarSources: [
+      { type: 'ical', id: 'https://www.airbnb.com.vn/calendar/ical/1066426418987278995.ics?s=098f9a70c60adc77f7982bd0c6ab8143' },
+      { type: 'google', id: 'f11476bd88dc5a43412549d13872116b84864f4c50c48487f6d41f01fa7c2f05@group.calendar.google.com' },
+    ],
   },
   {
     id: 'room-203',
@@ -238,6 +267,10 @@ export const rooms: Room[] = [
     ],
     airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome203',
     featured: true,
+    calendarSources: [
+      { type: 'ical', id: 'https://www.airbnb.com/calendar/ical/1340549847340014819.ics?t=bb5f3194fda644559d115c26350f288b' },
+      { type: 'google', id: 'spicehomevn@gmail.com', filter: 'R203' },
+    ],
   },
   {
     id: 'room-221',
@@ -273,6 +306,10 @@ export const rooms: Room[] = [
     ],
     airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome221',
     featured: false,
+    calendarSources: [
+      { type: 'ical', id: 'https://www.airbnb.com/calendar/ical/1231973925176763315.ics?t=f0ff295158424e5d87a30b71004f994f' },
+      { type: 'google', id: 'spicehomevn@gmail.com', filter: 'R221' },
+    ],
   },
   {
     id: 'room-222',
@@ -307,6 +344,10 @@ export const rooms: Room[] = [
     ],
     airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome222',
     featured: false,
+    calendarSources: [
+      { type: 'ical', id: 'https://www.airbnb.com/calendar/ical/1231461508141082705.ics?t=fcdead28359c499684f3e031e331fb5f' },
+      { type: 'google', id: 'spicehomevn@gmail.com', filter: 'R222' },
+    ],
   },
 ]
 

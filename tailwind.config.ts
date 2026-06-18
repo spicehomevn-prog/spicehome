@@ -17,6 +17,19 @@ const config: Config = {
         accent: '#C4773B',
         'accent-hover': '#A8622E',
         border: '#E8E4DC',
+        // Minibar palette
+        mb: {
+          terra: '#B14A24',
+          'terra-dark': '#8A3415',
+          amber: '#E0935A',
+          sand: '#F6E2CF',
+          cream: '#FBF4E9',
+          ink: '#2E2620',
+          muted: '#917C68',
+          line: '#ECDFCC',
+          'empty-bar': '#EFE4D2',
+          'qr-frame': '#5C2410',
+        },
       },
       fontFamily: {
         playfair: ['var(--font-playfair)', 'Georgia', 'serif'],

@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
-import { Navbar } from '@/components/layout/Navbar'
-import { Footer } from '@/components/layout/Footer'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { GalleryProvider } from '@/context/GalleryContext'
 
@@ -40,9 +38,7 @@ export default function RootLayout({
       <body className="font-inter antialiased">
         <LanguageProvider>
           <GalleryProvider>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
+            {children}
           </GalleryProvider>
         </LanguageProvider>
       </body>
