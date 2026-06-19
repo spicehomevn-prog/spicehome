@@ -31,7 +31,9 @@ export const metadata: Metadata = {
     locale: 'vi_VN',
     images: [
       {
-        url: '/images/common/area3.jpg',
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
         alt: 'SpiceHome Homestay — Khu vực chung, Phú Nhuận, Sài Gòn',
       },
     ],
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SpiceHome Homestay',
     description: 'Cozy authentic homestay in Phú Nhuận, Saigon',
-    images: ['/images/common/area3.jpg'],
+    images: ['/images/og-image.jpg'],
   },
 }
 
