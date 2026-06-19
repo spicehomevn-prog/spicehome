@@ -17,6 +17,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://spicehome.netlify.app'),
   title: 'SpiceHome Homestay — Phú Nhuận, Sài Gòn',
   description:
     'Homestay ấm cúng giữa lòng Phú Nhuận, TP. Hồ Chí Minh. Cozy and authentic homestay in the heart of Phú Nhuận, Ho Chi Minh City.',
@@ -25,6 +26,21 @@ export const metadata: Metadata = {
     title: 'SpiceHome Homestay',
     description: 'Cozy authentic homestay in Phú Nhuận, Saigon',
     type: 'website',
+    url: 'https://spicehome.netlify.app',
+    siteName: 'SpiceHome Homestay',
+    locale: 'vi_VN',
+    images: [
+      {
+        url: '/images/common/area3.jpg',
+        alt: 'SpiceHome Homestay — Khu vực chung, Phú Nhuận, Sài Gòn',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SpiceHome Homestay',
+    description: 'Cozy authentic homestay in Phú Nhuận, Saigon',
+    images: ['/images/common/area3.jpg'],
   },
 }
 
