@@ -401,7 +401,7 @@ export const rooms: Room[] = [
     airbnbUrl: 'https://www.airbnb.com.vn/h/spicehome321',
     featured: true,
     calendarSources: [
-      { type: 'google', id: 'avrsp3oabtdfbe52vag7t7m6p32hsgrf@import.calendar.google.com' },
+      { type: 'ical', id: 'https://www.airbnb.com.vn/calendar/ical/1710988961074299560.ics?t=38e9cf09afbc412fb08d38f7ed4054ea' },
       { type: 'google', id: 'spicehomevn@gmail.com', filter: 'R321' },
     ],
   },
