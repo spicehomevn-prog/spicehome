@@ -11,6 +11,7 @@ export interface GuideItem {
   hours?: string
   tip?: BilingualText
   mapsUrl?: string
+  photo?: string
 }
 
 export const guideItems: GuideItem[] = [
@@ -26,6 +27,7 @@ export const guideItems: GuideItem[] = [
     address: '122 Lê Văn Sỹ, Phú Nhuận, HCMC',
     hours: '6:00 – 23:00',
     mapsUrl: 'https://g.co/kgs/6N6uc2o',
+    photo: '/images/guide/pho-tan-hiep.jpg',
   },
   {
     id: 'hu-tieu-hoành-tam-ky',
@@ -38,6 +40,7 @@ export const guideItems: GuideItem[] = [
     address: '51 Trần Hữu Trang, Phú Nhuận, HCMC',
     hours: '8:00 – 20:00',
     mapsUrl: 'https://g.co/kgs/aVHMiUa',
+    photo: '/images/guide/hu-tieu-hoanh-tam-ky.jpg',
   },
   {
     id: 'bun-bo-trang',
@@ -50,18 +53,20 @@ export const guideItems: GuideItem[] = [
     address: '84/5 Trần Hữu Trang, Phú Nhuận, HCMC',
     hours: '6:00 – 12:00',
     mapsUrl: 'https://g.co/kgs/WbVjP5V',
+    photo: '/images/guide/bun-bo-trang.jpg',
   },
   {
     id: 'grandmas-pork-noodles',
     category: 'food',
-    name: { vi: "Bún Thịt Lợn Bà Nội (Flying Pork Noodles)", en: "Grandma's Flying Pork Noodles" },
+    name: { vi: 'Quán Hủ Tiếu Thả Dì Ba', en: 'Quán Hủ Tiếu Thả Dì Ba' },
     description: {
-      vi: 'Quán bún thịt heo nổi tiếng khu vực — thịt mềm tan, nước dùng thanh ngọt. Nên đến sớm vì hết rất nhanh!',
-      en: 'Famous neighbourhood pork noodle shop — tender meat, clear savoury broth. Come early, it sells out fast!',
+      vi: 'Quán hủ tiếu độc đáo — thức ăn được thả dây từ tầng trên xuống. Hủ tiếu thịt heo đậm đà, giá bình dân. Nên đến sớm vì hết rất nhanh!',
+      en: 'One-of-a-kind noodle shop where food is lowered by rope from above. Rich pork hủ tiếu, very affordable. Come early — it sells out fast!',
     },
     address: '76A Trần Hữu Trang, HCMC',
     hours: '6:00 – 18:00',
     mapsUrl: 'https://g.co/kgs/gJWxHMw',
+    photo: '/images/guide/hu-tieu-tha-di-ba.jpg',
   },
   {
     id: 'banh-can-ba-hai',
@@ -74,6 +79,7 @@ export const guideItems: GuideItem[] = [
     address: '64 Trương Quốc Dung, Phú Nhuận, HCMC',
     hours: '8:00 – 20:00',
     mapsUrl: 'https://g.co/kgs/Sk4CFia',
+    photo: '/images/guide/banh-can-ba-hai.jpg',
   },
   {
     id: 'com-tam-phuong',
@@ -86,6 +92,7 @@ export const guideItems: GuideItem[] = [
     address: '26 Hồ Biểu Chánh, Phú Nhuận, HCMC',
     hours: '6:00 – 10:00',
     mapsUrl: 'https://g.co/kgs/dzxmcah',
+    photo: '/images/guide/com-tam-phuong.jpg',
   },
 
   // Shopping
