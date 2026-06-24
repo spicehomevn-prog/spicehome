@@ -110,6 +110,7 @@ export const guideItems: GuideItem[] = [
       vi: 'Giá niêm yết rõ ràng, không cần mặc cả. Chấp nhận thẻ và tiền mặt.',
       en: 'Fixed prices, no bargaining needed. Accepts cards and cash.',
     },
+    photo: '/images/guide/bach-hoa-xanh.jpg',
   },
   {
     id: 'winmart',
@@ -121,6 +122,7 @@ export const guideItems: GuideItem[] = [
     },
     address: '137 Trần Hữu Trang, Phú Nhuận',
     hours: '8:00 – 21:00',
+    photo: '/images/guide/winmart.jpg',
   },
   {
     id: 'circle-k',
@@ -132,6 +134,7 @@ export const guideItems: GuideItem[] = [
     },
     address: '135 Lê Văn Sỹ, Phú Nhuận',
     hours: 'Open 24/7',
+    photo: '/images/guide/circle-k.jpg',
   },
   {
     id: 'cho-tran-huu-trang',
@@ -147,6 +150,7 @@ export const guideItems: GuideItem[] = [
       vi: 'Nên đi cùng người Việt hoặc người nói được tiếng Việt để tránh bị tính giá cao.',
       en: 'Best visited with a Vietnamese speaker to avoid tourist pricing.',
     },
+    photo: '/images/guide/cho-tran-huu-trang.webp',
   },
 
   // Attractions
@@ -162,6 +166,7 @@ export const guideItems: GuideItem[] = [
       vi: 'Rực rỡ nhất vào buổi tối cuối tuần — nhiều show trình diễn ngoài trời.',
       en: 'Most vibrant on weekend evenings — open-air performances and street entertainment.',
     },
+    photo: '/images/guide/nguyen-hue.jpg',
   },
   {
     id: 'bach-dang-wharf',
@@ -171,6 +176,7 @@ export const guideItems: GuideItem[] = [
       vi: 'Cuối đường Nguyễn Huệ, ngắm view sông Sài Gòn và thư giãn tại các quán cà phê ven sông.',
       en: 'At the end of Nguyễn Huệ Street — enjoy Saigon River views and relax at riverside cafes.',
     },
+    photo: '/images/guide/bach-dang.webp',
   },
   {
     id: 'bui-vien',
@@ -184,6 +190,7 @@ export const guideItems: GuideItem[] = [
       vi: 'Nên đến sau 8 giờ tối để trải nghiệm không khí đầy đủ nhất.',
       en: 'Best visited after 8 PM for the full atmosphere.',
     },
+    photo: '/images/guide/bui-vien.jpg',
   },
   {
     id: 'independence-palace',
@@ -193,6 +200,7 @@ export const guideItems: GuideItem[] = [
       vi: 'Di tích lịch sử quan trọng — bảo tàng mở cửa cho công chúng tham quan, kiến trúc độc đáo thập niên 60.',
       en: 'Significant historical landmark — open as a public museum with distinctive 1960s architecture.',
     },
+    photo: '/images/guide/independence-palace.jpg',
   },
   {
     id: 'city-post-office',
@@ -202,6 +210,7 @@ export const guideItems: GuideItem[] = [
       vi: 'Kiến trúc thuộc địa Pháp đặc sắc — ngay cạnh Nhà thờ Đức Bà, điểm check-in nổi tiếng.',
       en: 'Stunning French colonial architecture — located next to Notre Dame Cathedral, a popular photo spot.',
     },
+    photo: '/images/guide/post-office.jpg',
   },
   {
     id: 'cu-chi-tunnels',
@@ -215,6 +224,7 @@ export const guideItems: GuideItem[] = [
       vi: 'Đặt tour trên KLook để tránh bị lừa đảo. Có thể kết hợp với tour Đồng bằng sông Cửu Long.',
       en: 'Book through KLook to avoid scams. Can be combined with a Mekong Delta tour for a full day trip.',
     },
+    photo: '/images/guide/cu-chi.jpg',
   },
 
   // Transport
