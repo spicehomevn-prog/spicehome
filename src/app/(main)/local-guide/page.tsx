@@ -95,21 +95,21 @@ export default function LocalGuidePage() {
       {/* Category nav */}
       <nav className="sticky top-[64px] z-30 bg-dark">
         <div className="max-w-6xl mx-auto px-4">
-          <ul className="flex flex-wrap justify-center gap-1 py-2.5">
+          <ul className="flex flex-wrap justify-center gap-y-1.5 py-3">
             {categories.map(cat => {
               const label = lang === 'vi' ? cat.vi.label : cat.en.label
               const Icon = cat.icon
               return (
-                <li key={cat.key}>
+                <li key={cat.key} className="basis-1/4 px-1 md:basis-auto">
                   <a
                     href={`#${cat.key}`}
-                    className="flex items-center gap-1 whitespace-nowrap px-2 py-1 md:px-4 md:py-2
-                               text-[9px] md:text-[13px] font-medium uppercase tracking-wide
+                    className="flex w-full items-center justify-center gap-1.5 py-1.5 md:px-4 md:py-2
+                               text-[11px] md:text-[13px] font-medium uppercase tracking-wide
                                text-white/75 bg-white/10 border border-white/15 rounded-md
                                hover:bg-accent hover:text-white hover:border-accent
                                transition-colors duration-150"
                   >
-                    <Icon size={9} className="shrink-0 hidden md:block md:w-[14px] md:h-[14px]" />
+                    <Icon size={11} className="shrink-0 hidden md:block md:w-[14px] md:h-[14px]" />
                     {label}
                   </a>
                 </li>
