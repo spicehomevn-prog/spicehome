@@ -389,7 +389,7 @@ export const guideItems: GuideItem[] = [
     address: '46 Trương Quốc Dung, Phú Nhuận, HCMC',
     hours: '8:00 – 22:00',
     mapsUrl: 'https://maps.app.goo.gl/sHfuu3zZZ6wYnwzp6',
-    photo: '/images/guide/sanite.jpg',
+    photo: '/images/guide/sanite.webp',
   },
   {
     id: 'bep-chay-de-thinh',
@@ -475,7 +475,6 @@ export const guideItems: GuideItem[] = [
     },
     address: '137/18/16 Lê Văn Sỹ, Phú Nhuận, HCMC',
     mapsUrl: 'https://maps.app.goo.gl/Sxg9xMty8otfLPps8',
-    photo: '/images/guide/nha-xun.jpg',
   },
   {
     id: 'tyni-nail',
