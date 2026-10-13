@@ -103,7 +103,7 @@ export default function LocalGuidePage() {
                 <li key={cat.key} className="basis-1/4 px-1 md:basis-auto">
                   <a
                     href={`#${cat.key}`}
-                    className="flex w-full items-center justify-center gap-1.5 py-1.5 md:px-4 md:py-2
+                    className="flex w-full items-center justify-center text-center gap-1.5 px-1.5 py-1.5 md:px-4 md:py-2
                                text-[11px] md:text-[13px] font-medium uppercase tracking-wide
                                text-white/75 bg-white/10 border border-white/15 rounded-md
                                hover:bg-accent hover:text-white hover:border-accent
