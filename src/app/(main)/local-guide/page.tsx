@@ -1,6 +1,6 @@
 'use client'
 
-import { Utensils, ShoppingBag, Landmark, Bus } from 'lucide-react'
+import { Utensils, ShoppingBag, Landmark, Bus, Leaf, Coffee, Sparkles } from 'lucide-react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { GuideCard } from '@/components/sections/GuideCard'
@@ -15,6 +15,18 @@ const categories = [
     en: { label: 'Food & Drinks', title: 'Where to Eat', desc: 'Great local spots that the neighbourhood regulars go to.' },
   },
   {
+    key: 'cafes' as const,
+    icon: Coffee,
+    vi: { label: 'Cà phê', title: 'Quán Cà Phê', desc: 'Những quán cà phê nổi bật gần homestay — từ không gian độc đáo đến quán mở cửa cả đêm.' },
+    en: { label: 'Cafés', title: 'Cafés', desc: 'Standout coffee spots near the homestay — from unique concept cafés to places open all night.' },
+  },
+  {
+    key: 'vegetarian' as const,
+    icon: Leaf,
+    vi: { label: 'Quán Chay', title: 'Ăn Chay', desc: 'Những quán chay ngon trong khu vực — thích hợp cho ngày chay, khách ăn chay trường, hoặc ai muốn thử ẩm thực thuần chay Việt.' },
+    en: { label: 'Vegetarian', title: 'Vegetarian Eats', desc: 'Good vegetarian spots in the neighbourhood — ideal for veggie travellers or anyone wanting to try Vietnamese plant-based food.' },
+  },
+  {
     key: 'shopping' as const,
     icon: ShoppingBag,
     vi: { label: 'Mua sắm', title: 'Mua Sắm', desc: 'Siêu thị, chợ truyền thống và nhà thuốc gần homestay.' },
@@ -25,6 +37,12 @@ const categories = [
     icon: Landmark,
     vi: { label: 'Tham quan', title: 'Địa Điểm Tham Quan', desc: 'Những nơi không thể bỏ qua khi ở Sài Gòn.' },
     en: { label: 'Attractions', title: 'Places to Visit', desc: 'Must-see spots you cannot miss while in Saigon.' },
+  },
+  {
+    key: 'beauty' as const,
+    icon: Sparkles,
+    vi: { label: 'Làm đẹp & Spa', title: 'Làm Đẹp & Spa', desc: 'Tiệm tóc, nail, gội đầu dưỡng sinh và spa thư giãn trong khu vực.' },
+    en: { label: 'Beauty & Spa', title: 'Beauty & Spa', desc: 'Hair salons, nail studios, therapeutic head spas and relaxation spas in the neighbourhood.' },
   },
   {
     key: 'transport' as const,
@@ -74,6 +92,30 @@ export default function LocalGuidePage() {
         </AnimateOnScroll>
       </section>
 
+      {/* Category nav */}
+      <nav className="sticky top-[64px] z-30 bg-surface border-b border-border">
+        <div className="max-w-6xl mx-auto px-6">
+          <ul className="flex gap-1 overflow-x-auto scrollbar-hide py-2">
+            {categories.map(cat => {
+              const label = lang === 'vi' ? cat.vi.label : cat.en.label
+              const Icon = cat.icon
+              return (
+                <li key={cat.key} className="shrink-0">
+                  <a
+                    href={`#${cat.key}`}
+                    className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium uppercase tracking-widest
+                               text-muted-text hover:text-accent hover:bg-accent/5 rounded-sm transition-colors duration-150"
+                  >
+                    <Icon size={13} />
+                    {label}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </nav>
+
       {/* Guide categories */}
       {categories.map((cat, catIdx) => {
         const Icon = cat.icon
@@ -82,7 +124,7 @@ export default function LocalGuidePage() {
         const bgColor = catIdx % 2 === 0 ? 'bg-background' : 'bg-surface'
 
         return (
-          <section key={cat.key} className={`${bgColor} py-16 md:py-20`}>
+          <section key={cat.key} id={cat.key} className={`${bgColor} py-16 md:py-20`}>
             <div className="max-w-6xl mx-auto px-6">
               <AnimateOnScroll className="flex items-center gap-3 mb-10">
                 <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center shrink-0">

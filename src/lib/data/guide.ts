@@ -1,6 +1,6 @@
 import type { BilingualText } from '@/context/LanguageContext'
 
-export type GuideCategory = 'food' | 'shopping' | 'attractions' | 'transport'
+export type GuideCategory = 'food' | 'cafes' | 'shopping' | 'attractions' | 'transport' | 'vegetarian' | 'beauty'
 
 export interface GuideItem {
   id: string
@@ -89,10 +89,94 @@ export const guideItems: GuideItem[] = [
       vi: 'Cơm tấm sườn nướng — đặc sản Sài Gòn không thể bỏ qua. Bữa sáng nhanh, ngon và đậm đà.',
       en: 'Broken rice with grilled pork chop — a quintessential Saigon dish. A quick, tasty and filling breakfast.',
     },
-    address: '26 Hồ Biểu Chánh, Phú Nhuận, HCMC',
+    address: '413 Huỳnh Văn Bánh, Phú Nhuận, HCMC',
     hours: '6:00 – 10:00',
     mapsUrl: 'https://g.co/kgs/dzxmcah',
     photo: '/images/guide/com-tam-phuong.jpg',
+  },
+
+  // Cafes
+  {
+    id: 'oasis-cafe',
+    category: 'cafes',
+    name: { vi: 'Oasis Cafe – Koi Fish Cafe', en: 'Oasis Cafe – Koi Fish Cafe' },
+    description: {
+      vi: 'Quán cà phê độc đáo với hồ cá koi và kiến trúc làng châu Âu — không gian xanh mát, yên tĩnh giữa lòng thành phố.',
+      en: 'A one-of-a-kind café featuring koi fish ponds and European village-inspired architecture — a peaceful green escape in the city.',
+    },
+    address: '176/1B Lê Văn Sỹ, Phú Nhuận, HCMC',
+    hours: '7:00 – 23:00',
+    tip: {
+      vi: 'Lý tưởng cho buổi sáng hoặc chiều tà — đông vào cuối tuần, nên đến sớm.',
+      en: 'Ideal for a morning or afternoon visit — busy on weekends, so come early.',
+    },
+    mapsUrl: 'https://share.google/9XRIWBBb2Tii7YHPl',
+    photo: '/images/guide/oasis-cafe.jpg',
+  },
+  {
+    id: 'den-da-coffee',
+    category: 'cafes',
+    name: { vi: 'Đen Đá Coffee (24/24)', en: 'Đen Đá Coffee (Open 24/7)' },
+    description: {
+      vi: 'Quán cà phê mở cửa 24/24 — cà phê đen đá, trà sữa, bánh mì nướng và đồ ngọt. Lý tưởng cho những đêm muộn hoặc sáng sớm.',
+      en: 'A 24-hour café serving Vietnamese black iced coffee, milk tea, toasted bread and desserts. Perfect for late nights or early mornings.',
+    },
+    address: '110 Lê Văn Sỹ, Phú Nhuận, HCMC',
+    hours: 'Mở cửa 24/24',
+    mapsUrl: 'https://share.google/Qeuz9Ht0thNrQ9KtR',
+    photo: '/images/guide/den-da-coffee.jpg',
+  },
+  {
+    id: 'c-fleur-cafe',
+    category: 'cafes',
+    name: { vi: 'C.Fleur Cafe', en: 'C.Fleur Cafe' },
+    description: {
+      vi: 'Quán cà phê nhỏ xinh với hoa tươi và không gian ấm cúng — cà phê, trà, bánh ngọt và boutique thời trang ngay trong quán.',
+      en: 'A charming little café with fresh florals and cosy décor — coffee, tea, pastries and a small fashion boutique tucked in the back.',
+    },
+    address: '10L Trần Hữu Trang, Phú Nhuận, HCMC',
+    hours: '8:00 – 21:00',
+    photo: '/images/guide/c-fleur-cafe.jpg',
+  },
+  {
+    id: 'phuong-ca-phe',
+    category: 'cafes',
+    name: { vi: 'Phường Cà Phê', en: 'Phường Cà Phê' },
+    description: {
+      vi: 'Quán cà phê quen thuộc của người dân Phú Nhuận — không gian thoải mái, giá bình dân, mở cửa từ sáng sớm.',
+      en: 'A neighbourhood staple for Phú Nhuận locals — relaxed atmosphere, affordable prices, open from early morning.',
+    },
+    address: '115/102 Lê Văn Sỹ, Phú Nhuận, HCMC',
+    hours: '7:30 – 22:00',
+    photo: '/images/guide/phuong-ca-phe.jpg',
+  },
+  {
+    id: 'nho-cafe',
+    category: 'cafes',
+    name: { vi: 'NHỎ Cafe', en: 'NHỎ Cafe' },
+    description: {
+      vi: 'Quán cà phê hoài cổ với không gian trang trí thập niên 80-90 — nằm ven đường tàu, yên tĩnh và đầy cá tính.',
+      en: 'A nostalgic café decorated in 1980s–90s vintage style — tucked alongside the railway line, quiet and full of character.',
+    },
+    address: '115/30 Lê Văn Sỹ, Phú Nhuận, HCMC',
+    hours: '8:00 – 22:00',
+    tip: {
+      vi: 'Chụp ảnh điện thoại thoải mái — không chụp máy DSLR chuyên nghiệp trong quán.',
+      en: 'Smartphone photos are welcome — professional camera shoots are not allowed inside.',
+    },
+    photo: '/images/guide/nho-cafe.jpg',
+  },
+  {
+    id: 'mien-dong-thao',
+    category: 'cafes',
+    name: { vi: 'Cà Phê Miền Đồng Thảo', en: 'Miền Đồng Thảo Café' },
+    description: {
+      vi: 'Quán cà phê vườn rộng lớn với không gian xanh mát như đồng cỏ — lý tưởng cho nhóm bạn hoặc buổi họp mặt gia đình.',
+      en: 'A large garden café with the feel of a peaceful meadow — ideal for groups, family outings or a long lazy afternoon.',
+    },
+    address: '221A Nguyễn Trọng Tuyển, Phú Nhuận, HCMC',
+    hours: '7:00 – 23:00',
+    photo: '/images/guide/mien-dong-thao.jpg',
   },
 
   // Shopping
@@ -263,11 +347,173 @@ export const guideItems: GuideItem[] = [
       en: 'Book intercity buses and sleeper buses through Vexere.com — convenient and affordable.',
     },
   },
+
+  // Vegetarian
+  {
+    id: 'quan-chay-120',
+    category: 'vegetarian',
+    name: { vi: 'Quán Chay 120', en: 'Quán Chay 120' },
+    description: {
+      vi: 'Quán cơm chay bình dân ngay gần homestay — thực đơn đa dạng, giá cả phải chăng, phù hợp bữa trưa hoặc ăn nhẹ.',
+      en: 'Affordable vegetarian rice restaurant just a short walk away — varied menu, reasonable prices, great for lunch or a light meal.',
+    },
+    address: '120 Trương Quốc Dung, Phú Nhuận, HCMC',
+    mapsUrl: 'https://maps.app.goo.gl/mfAinvTnbwE4dutB8',
+    photo: '/images/guide/quan-chay-120.jpg',
+  },
+  {
+    id: 'hoa-uu-dam',
+    category: 'vegetarian',
+    name: { vi: 'Quán Chay Hoa Ưu Đàm', en: 'Hoa Uu Dam Vegetarian' },
+    description: {
+      vi: 'Quán chay truyền thống với món ăn từ nấm và rau củ tươi — cơm tấm chay buổi sáng và các món miền Nam thanh đạm.',
+      en: 'Traditional vegetarian eatery with mushroom and fresh vegetable dishes — breakfast cơm tấm and Southern-style mains.',
+    },
+    address: '127/36 Cô Giang, Phú Nhuận, HCMC',
+    hours: '7:00 – 13:00  &  17:00 – 20:00',
+    tip: {
+      vi: 'Đóng cửa vào mùng 2 và 16 âm lịch — nên kiểm tra lịch trước khi đến.',
+      en: 'Closed on the 2nd and 16th of the lunar calendar — check the date before visiting.',
+    },
+    mapsUrl: 'https://maps.app.goo.gl/16p66tAHAyZz9FyK9',
+    photo: '/images/guide/hoa-uu-dam.jpg',
+  },
+  {
+    id: 'sanite',
+    category: 'vegetarian',
+    name: { vi: 'Sanité Restaurant', en: 'Sanité Restaurant' },
+    description: {
+      vi: 'Nhà hàng chay phong cách hiện đại — thực đơn sáng tạo từ nguyên liệu tự nhiên, phù hợp cả ăn chay và thực khách muốn thử.',
+      en: 'Contemporary vegetarian restaurant with a creative menu from natural ingredients — welcoming for vegetarians and curious meat-eaters alike.',
+    },
+    address: '46 Trương Quốc Dung, Phú Nhuận, HCMC',
+    hours: '8:00 – 22:00',
+    mapsUrl: 'https://maps.app.goo.gl/sHfuu3zZZ6wYnwzp6',
+    photo: '/images/guide/sanite.jpg',
+  },
+  {
+    id: 'bep-chay-de-thinh',
+    category: 'vegetarian',
+    name: { vi: 'Bếp Chay Đế Thính', en: 'Bếp Chay Đế Thính' },
+    description: {
+      vi: 'Quán cơm chay ấm cúng phục vụ bữa trưa và chiều tối — món ăn miền Nam thanh đạm, giá bình dân.',
+      en: 'Cosy vegetarian rice spot serving lunch and dinner — Southern-style clean eating at budget-friendly prices.',
+    },
+    address: '305/7/7 Lê Văn Sỹ, Tân Bình, HCMC',
+    hours: 'T2–T7: 10:00–13:30  &  17:00–20:00',
+    tip: {
+      vi: 'Nghỉ Chủ nhật — mở cửa Thứ 2 đến Thứ 7.',
+      en: 'Closed Sundays — open Monday to Saturday.',
+    },
+    mapsUrl: 'https://maps.app.goo.gl/vid5v6V478wtWQQK6',
+    photo: '/images/guide/bep-chay-de-thinh.jpg',
+  },
+  {
+    id: 'tami-chay',
+    category: 'vegetarian',
+    name: { vi: 'Tami Coffee & Chay', en: 'Tami Coffee & Chay' },
+    description: {
+      vi: 'Nhà hàng chay hiện đại kết hợp quán cà phê — phục vụ từ bữa sáng đến tối, có đồ uống và nước ép tươi.',
+      en: 'Modern vegetarian restaurant and café — great from breakfast through dinner, with drinks and fresh-pressed juices.',
+    },
+    address: '33 Hoàng Diệu, Phú Nhuận, HCMC',
+    hours: '7:00 – 22:00',
+    mapsUrl: 'https://maps.app.goo.gl/StZosQqtJWjKPWVJ6',
+    photo: '/images/guide/tami-chay.jpg',
+  },
+
+  // Beauty & Spa
+  {
+    id: 'jun-for-hair',
+    category: 'beauty',
+    name: { vi: 'JUN for Hair', en: 'JUN for Hair' },
+    description: {
+      vi: 'Tiệm tóc phong cách với không gian xanh mát, cửa kính và ánh sáng tự nhiên — cắt, nhuộm và tạo kiểu chuyên nghiệp.',
+      en: 'A stylish hair salon with lush plants, glass facade and natural light — professional cuts, colouring and styling.',
+    },
+    address: '77B Huỳnh Tịnh Của, Phú Nhuận, HCMC',
+    hours: 'T3–CN: 9:30 – 20:00',
+    tip: {
+      vi: 'Nghỉ thứ Hai hàng tuần.',
+      en: 'Closed every Monday.',
+    },
+    mapsUrl: 'https://share.google/gLSlDl5SUa6QB8UmR',
+    photo: '/images/guide/jun-for-hair.jpg',
+  },
+  {
+    id: '893-hair-style',
+    category: 'beauty',
+    name: { vi: '893 Hair Style', en: '893 Hair Style' },
+    description: {
+      vi: 'Tiệm làm tóc phong cách trong hẻm Lê Văn Sỹ — cắt, nhuộm, tạo kiểu theo lịch hẹn.',
+      en: 'A stylish hair salon tucked off Lê Văn Sỹ — cuts, colour and styling by appointment.',
+    },
+    address: '182/5 Lê Văn Sỹ, Phú Nhuận, HCMC',
+    mapsUrl: 'https://share.google/TqV4rEiCp5VfJsdZy',
+    photo: '/images/guide/893-hair-style.jpg',
+  },
+  {
+    id: 'mia-goi-dau',
+    category: 'beauty',
+    name: { vi: 'MIA Gội Đầu Dưỡng Sinh', en: 'MIA Head Spa' },
+    description: {
+      vi: 'Dịch vụ gội đầu dưỡng sinh kết hợp massage thư giãn — thư giãn đầu óc sau một ngày dài khám phá thành phố.',
+      en: 'Therapeutic hair-washing with relaxing scalp and shoulder massage — the perfect wind-down after a day exploring the city.',
+    },
+    address: '417 Huỳnh Văn Bánh, Phú Nhuận, HCMC',
+    hours: '7:00 – 21:00',
+    mapsUrl: 'https://maps.app.goo.gl/6KBjTiJxJBQ3AL2ZA',
+    photo: '/images/guide/mia-goi-dau.jpg',
+  },
+  {
+    id: 'nha-xun',
+    category: 'beauty',
+    name: { vi: 'Tiệm Gội Nhà Xưn', en: 'Nhà Xưn Hair Wash' },
+    description: {
+      vi: 'Tiệm gội đầu nhỏ ấm cúng trong hẻm — giá bình dân, chăm sóc chu đáo kiểu gia đình.',
+      en: 'A cosy little hair-wash spot tucked in an alley — affordable prices and attentive, homely service.',
+    },
+    address: '137/18/16 Lê Văn Sỹ, Phú Nhuận, HCMC',
+    mapsUrl: 'https://maps.app.goo.gl/Sxg9xMty8otfLPps8',
+    photo: '/images/guide/nha-xun.jpg',
+  },
+  {
+    id: 'tyni-nail',
+    category: 'beauty',
+    name: { vi: 'Tyni Nail – Gội Đầu', en: 'Tyni Nail & Head Spa' },
+    description: {
+      vi: 'Tiệm nail và gội đầu dưỡng sinh — làm móng, dưỡng tóc và thư giãn trong một địa điểm.',
+      en: 'Nail and therapeutic hair-wash studio — manicures, scalp care and relaxation all in one place.',
+    },
+    address: '180B Lê Văn Sỹ, Phú Nhuận, HCMC',
+    mapsUrl: 'https://maps.app.goo.gl/7NGd9jeCpqVuZR1b6',
+    photo: '/images/guide/tyni-nail.jpg',
+  },
+  {
+    id: 'mam-spa',
+    category: 'beauty',
+    name: { vi: 'Mầm Spa', en: 'Mầm Spa' },
+    description: {
+      vi: 'Spa trị liệu chất lượng cao với massage toàn thân, chăm sóc da và gội đầu thảo mộc — không gian yên tĩnh, dịch vụ chuyên nghiệp.',
+      en: 'Quality therapeutic spa offering full-body massage, skincare and herbal hair treatment — quiet space, professional service.',
+    },
+    address: '184/4B Lê Văn Sỹ, Phú Nhuận, HCMC',
+    hours: '10:00 – 21:00',
+    tip: {
+      vi: 'Dịch vụ tốt, giá cao hơn mức trung bình — xứng đáng cho một buổi thư giãn đặc biệt.',
+      en: 'High-quality service at above-average prices — worth it for a special treat.',
+    },
+    mapsUrl: 'https://maps.app.goo.gl/aEuWF6QCfqVX3DYU7',
+    photo: '/images/guide/mam-spa.jpg',
+  },
 ]
 
 export const guideByCategory = {
   food: guideItems.filter(i => i.category === 'food'),
+  cafes: guideItems.filter(i => i.category === 'cafes'),
   shopping: guideItems.filter(i => i.category === 'shopping'),
   attractions: guideItems.filter(i => i.category === 'attractions'),
   transport: guideItems.filter(i => i.category === 'transport'),
+  vegetarian: guideItems.filter(i => i.category === 'vegetarian'),
+  beauty: guideItems.filter(i => i.category === 'beauty'),
 }
