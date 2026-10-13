@@ -94,9 +94,6 @@ export const rooms: Room[] = [
       '/images/rooms/room-102/img2.jpg',
       '/images/rooms/room-102/img3.jpg',
       '/images/rooms/room-102/img4.jpg',
-      '/images/rooms/room-102/img5.jpg',
-      '/images/rooms/room-102/img6.jpg',
-      '/images/rooms/room-102/img7.jpg',
     ],
     amenities: [
       { vi: 'Điều hòa nhiệt độ', en: 'Air conditioning' },
@@ -136,6 +133,9 @@ export const rooms: Room[] = [
       '/images/rooms/room-103/img3.jpg',
       '/images/rooms/room-103/img4.jpg',
       '/images/rooms/room-103/img5.jpg',
+      '/images/rooms/room-103/img6.jpg',
+      '/images/rooms/room-103/img8.jpg',
+      '/images/rooms/room-103/img9.jpg',
     ],
     amenities: [
       { vi: 'Điều hòa nhiệt độ', en: 'Air conditioning' },
