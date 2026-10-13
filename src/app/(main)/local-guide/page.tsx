@@ -100,16 +100,16 @@ export default function LocalGuidePage() {
               const label = lang === 'vi' ? cat.vi.label : cat.en.label
               const Icon = cat.icon
               return (
-                <li key={cat.key} className="basis-1/4 px-1 md:basis-auto">
+                <li key={cat.key} className="basis-1/4 px-1">
                   <a
                     href={`#${cat.key}`}
-                    className="flex w-full items-center justify-center text-center gap-1.5 px-1.5 py-1.5 md:px-4 md:py-2
-                               text-[11px] md:text-[13px] font-medium uppercase tracking-wide
+                    className="flex w-full items-center justify-center text-center gap-1.5 px-1.5 py-1.5
+                               text-[11px] font-medium uppercase tracking-wide
                                text-white/75 bg-white/10 border border-white/15 rounded-md
                                hover:bg-accent hover:text-white hover:border-accent
                                transition-colors duration-150"
                   >
-                    <Icon size={11} className="shrink-0 hidden md:block md:w-[14px] md:h-[14px]" />
+                    <Icon size={11} className="shrink-0 hidden md:block" />
                     {label}
                   </a>
                 </li>
